@@ -4,11 +4,24 @@ import './Header.scss'
 // icons
 import { RiMoonFill, RiSunFill } from 'react-icons/ri'
 
+import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
+
 function Header() {
+
+    const navigate = useNavigate()
+
+    const goTo = () => {
+        navigate('/')
+    }
+
     return (
         <header className="header">
 
-            <span className="header__logo">
+            <span 
+                className="header__logo"
+                onClick={goTo}
+            >
 
                 &lt;h//t&gt;
             
@@ -18,13 +31,21 @@ function Header() {
             
                 <ul>
             
-                    <li>home</li>
+                    <li>
+                        <Link to='/'>home</Link>
+                    </li>
             
-                    <li>about</li>
+                    <li>
+                        <Link to='about'>about</Link>
+                    </li>
             
-                    <li>projects</li>
+                    <li>
+                        <Link to='/work'>work</Link>
+                    </li>
             
-                    <li>contact</li>
+                    <li>
+                        <Link to='contact'>contact</Link>
+                    </li>
             
                 </ul>
             

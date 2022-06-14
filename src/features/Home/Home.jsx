@@ -4,7 +4,16 @@ import './Home.scss'
 // icons
 import { TiSocialGithubCircular, TiSocialLinkedinCircular, TiSocialAtCircular } from 'react-icons/ti'
 
+import { useNavigate } from 'react-router'
+
 function Home() {
+
+    const navigate = useNavigate()
+
+    const goTo = () => {
+        navigate('/work')
+    }
+
     return (
         <div className="home">
 
@@ -32,7 +41,7 @@ function Home() {
 
             <section className="home__projects">
 
-                <h1>
+                <h1 onClick={goTo}>
                     Projects
                 </h1>
 
