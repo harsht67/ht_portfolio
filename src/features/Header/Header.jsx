@@ -1,13 +1,42 @@
 // styles
 import './Header.scss'
 
+// icons
+import { RiMoonFill, RiSunFill } from 'react-icons/ri'
+
 function Header() {
     return (
-        <div className="header">
+        <header className="header">
 
-            header desu
+            <span className="header__logo">
 
-        </div>
+                &lt;h//t&gt;
+            
+            </span>
+
+            <nav className="header__nav">
+            
+                <ul>
+            
+                    <li>home</li>
+            
+                    <li>about</li>
+            
+                    <li>projects</li>
+            
+                    <li>contact</li>
+            
+                </ul>
+            
+            </nav>
+
+            <span className="header__themeBtn">
+            
+                <RiMoonFill/>
+            
+            </span>
+
+        </header>
     )
 }
 

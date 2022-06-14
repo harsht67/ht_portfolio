@@ -1,0 +1,28 @@
+.footer {
+    padding: 1rem 4rem;
+    border-block-start: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+
+    .footer__info {
+
+        p:first-child {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-block-end: 0.25em;
+        }
+
+        p:last-child {
+            font-size: 0.9rem;
+        }
+
+    }
+
+    .footer__socials {
+        font-size: 2rem;
+
+        > * {
+            cursor: pointer;
+        }
+    }
+}

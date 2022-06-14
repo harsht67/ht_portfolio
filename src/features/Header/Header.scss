@@ -1,0 +1,39 @@
+.header {
+    padding: 1rem 4rem;
+    border-block-end: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__logo {
+        font-family: 'roboto mono';
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+    }
+
+    .header__nav {
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+            li {
+                margin-inline-end: 1em;
+                text-transform: capitalize;
+                font-size: 1.25rem;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .header__themeBtn {
+        font-size: 1.25rem;
+        cursor: pointer;
+    }
+
+}
