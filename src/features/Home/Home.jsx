@@ -30,11 +30,45 @@ function Home() {
 
             </section>
 
-            <section className="home__skills"></section>
+            <section className="home__projects">
 
-            <section className="home__projects"></section>
+                <h1>
+                    Projects
+                </h1>
 
-            <section className="home__contact"></section>
+                <ul>
+
+                    <li>Portfolio Website</li>
+
+                    <li>Amazon Clone</li>
+
+                    <li>Invoice App</li>
+
+                    <li>Todo App</li>
+                    
+                    <li>Maps API</li>
+
+                </ul>
+
+
+            </section>
+
+            <section className="home__contact">
+
+                <h1>
+                    Let's work together
+                </h1>
+
+                <p className="contact__email">
+                    harsh@gmail.com
+                </p>
+
+                <button className="contact__btn">
+                    Get in touch
+                </button>
+
+
+            </section>
 
         </div>
     )
