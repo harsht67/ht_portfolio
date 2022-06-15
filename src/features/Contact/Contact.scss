@@ -1,3 +1,63 @@
 .contact {
     padding: 2rem 4rem;
+
+    .contact__title {
+        font-size: 4rem;
+        font-weight: 500;
+        margin-block-end: 2rem;
+    }
+
+    .contact__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact__form {
+        width: 50%;
+
+        label {
+            display: block;
+            border-block-end: 1px solid #bebebe;
+            font-size: 1.25rem;
+            margin-block-end: 2rem;
+
+            input, textarea {
+                all: unset;
+                width: 100%;
+                padding: 1rem 0;
+            }
+
+            textarea {
+                height: 8rem;
+            }
+            
+        }
+        
+        button {
+            all: unset;
+            border: 1px solid #fff;
+            padding: 1rem 2rem;
+            text-transform: capitalize;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+    }
+
+    .contact__links {
+        width: 30%;
+
+        > * {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin-block-end: 1rem;
+            cursor: pointer;
+            
+            > *:first-child {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
 }
