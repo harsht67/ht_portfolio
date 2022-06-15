@@ -1,3 +1,45 @@
 .about {
     padding: 2rem 4rem;
+
+    .about__title {
+        font-size: 4rem;
+        font-weight: 500;
+        margin-block-end: 5rem;
+    }
+
+    .about__subtitle {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    > section {
+        margin-block-end: 10rem;
+        display: flex;
+        gap: 2rem;
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        letter-spacing: 0.05em;
+
+        > *:first-child {
+            width: 20%;
+        }
+
+        > *:last-child {
+            width: 60%;
+        }
+
+    }
+
+    .skills__icons {
+        display: flex;
+        gap: 4rem;
+        flex-wrap: wrap;
+
+        > * {
+            font-size: 4rem;
+            cursor: pointer;
+        }
+
+    }
+    
 }
