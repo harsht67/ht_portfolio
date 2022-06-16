@@ -1,0 +1,6 @@
+@use 'fonts' as *;
+
+@mixin title {
+    font-size: $fs-900;
+    font-weight: 500;
+}

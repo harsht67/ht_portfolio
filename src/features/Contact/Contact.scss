@@ -1,9 +1,10 @@
+@use '../../sass' as *;
+
 .contact {
-    padding: 2rem 4rem;
+    padding: $pad-y $pad-x;
 
     .contact__title {
-        font-size: 4rem;
-        font-weight: 500;
+        @include title();
         margin-block-end: 2rem;
     }
 
