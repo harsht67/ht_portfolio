@@ -2,13 +2,28 @@
 import './Work.scss'
 
 // components
-import Project from './Project'
+import Box from './Box'
+
+import { useState, useEffect } from 'react'
+
+import { client, urlFor } from '../../client'
 
 const filters = ['all', 'frontend', 'fullstack']
-
-const projects = ['portfolio website', 'amazon clone', 'invoice app', 'todo app', 'map API']
+// const projects = ['portfolio website', 'amazon clone', 'invoice app', 'todo app', 'map API']
 
 function Work() {
+
+    const [works, setWorks] = useState([])
+
+    useEffect(() => {
+        const query = '*[_type == "works"]'
+
+        client
+            .fetch(query)
+            .then(data => setWorks(data))
+            
+    }, [])
+
     return (
         <div className="work">
 
@@ -26,7 +41,7 @@ function Work() {
 
             <section className="work__content">
 
-                { projects.map(project => <Project data={project} /> )}
+                { works.map(work => <Box data={work} /> )}
 
             </section>
 
