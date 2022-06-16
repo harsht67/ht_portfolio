@@ -21,8 +21,12 @@
     .footer__socials {
         font-size: 2rem;
 
-        > * {
+        img {
+            width: 2rem;
             cursor: pointer;
+            margin-inline-end: 0.5rem;
         }
+
+
     }
 }

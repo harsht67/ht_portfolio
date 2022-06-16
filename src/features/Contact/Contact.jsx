@@ -1,9 +1,7 @@
 // styles
 import './Contact.scss'
 
-// icons
-import { TiSocialGithubCircular, TiSocialLinkedinCircular, TiSocialAtCircular } from 'react-icons/ti'
-import { RiPhoneFill } from 'react-icons/ri'
+import { images } from '../../constants' 
 
 function Contact() {
     return (
@@ -56,19 +54,19 @@ function Contact() {
                 <aside className="contact__links">
 
                     <p>
-                        <RiPhoneFill/> 9582594496
+                    <img src={images.phone} alt="phone image" /> 9582594496
                     </p>
 
                     <p>
-                        <TiSocialAtCircular/> harshtomar@gmail.com
+                    <img src={images.mail} alt="mail image" /> harshtomar@gmail.com
                     </p>
 
                     <p>
-                        <TiSocialGithubCircular/> github.harshtomar.com
+                        <img src={images.github} alt="github image" /> github.harshtomar.com
                     </p>
                     
                     <p>
-                        <TiSocialLinkedinCircular/> linkedin.harshtomar.com
+                        <img src={images.linkedin} alt="linkedin image" /> linkedin.harshtomar.com
                     </p>
 
                 </aside>

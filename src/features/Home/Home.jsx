@@ -1,8 +1,7 @@
 // styles
 import './Home.scss'
 
-// icons
-import { TiSocialGithubCircular, TiSocialLinkedinCircular, TiSocialAtCircular } from 'react-icons/ti'
+import { images } from '../../constants'
 
 import { useNavigate } from 'react-router'
 
@@ -25,11 +24,9 @@ function Home() {
 
                 <div>
 
-                    <TiSocialGithubCircular/>
+                    <img src={images.github} alt="github image" />
 
-                    <TiSocialLinkedinCircular/>
-
-                    <TiSocialAtCircular/>
+                    <img src={images.linkedin} alt="linkedin image" />
 
                 </div>
 

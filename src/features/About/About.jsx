@@ -1,11 +1,21 @@
 // styles
 import './About.scss'
 
-// icons
-import { IoLogoHtml5, IoLogoCss3, IoLogoJavascript, IoLogoReact, IoLogoNodejs, IoLogoGithub } from 'react-icons/io5'
-import { SiSass, SiMongodb } from 'react-icons/si'
+import { useState, useEffect } from 'react'
+
+import { client, urlFor } from '../../client'
 
 function About() {
+
+    const [skills, setSkills] = useState([])
+
+    useEffect(() => {
+        const query = '*[_type == "skills"]'
+
+        client.fetch(query)
+            .then(data => setSkills(data))
+    }, [])
+
     return (
         <div className="about">
 
@@ -36,14 +46,15 @@ function About() {
                 </h3>
 
                 <div className="skills__icons">
-                    <IoLogoHtml5/>
-                    <IoLogoCss3/>
-                    <IoLogoJavascript/>
-                    <IoLogoReact/>
-                    <SiSass/>
-                    <IoLogoGithub/>
-                    <IoLogoNodejs/>
-                    <SiMongodb/>
+
+                    { skills.map(skill => (
+                        <img 
+                            key={skill.name}
+                            src={urlFor(skill.imgurl)}
+                            alt="skill image" 
+                        />
+                    )) }
+
                 </div>
 
             </section>

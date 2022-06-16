@@ -2,8 +2,10 @@
 import './Footer.scss'
 
 // icons
-import { TiSocialGithubCircular, TiSocialLinkedinCircular, TiSocialAtCircular } from 'react-icons/ti'
 import { BiCopyright } from 'react-icons/bi'
+
+// images
+import { images } from '../../constants'
 
 function Footer() {
     return (
@@ -23,11 +25,9 @@ function Footer() {
 
             <section className="footer__socials">
 
-                <TiSocialGithubCircular/>
+                <img src={images.github} alt="mail img" />
 
-                <TiSocialLinkedinCircular/>
-
-                <TiSocialAtCircular/>
+                <img src={images.linkedin} alt="mail img" /> 
 
             </section>
 
