@@ -5,7 +5,7 @@
 
     .about__title {
         @include title();
-        margin-block-end: 5rem;
+        margin-block-end: 6rem;
     }
 
     .about__subtitle {
@@ -14,7 +14,7 @@
     }
 
     > section {
-        margin-block-end: 10rem;
+        margin-block-end: 9rem;
         display: flex;
         gap: 2rem;
         font-size: 1.25rem;

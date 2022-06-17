@@ -4,3 +4,9 @@
     font-size: $fs-900;
     font-weight: 500;
 }
+
+@mixin centerUsingFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

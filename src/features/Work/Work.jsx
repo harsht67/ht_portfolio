@@ -1,49 +1,102 @@
 // styles
 import './Work.scss'
 
-// components
-import Box from './Box'
-
+import { useNavigate, useParams } from 'react-router'
 import { useState, useEffect } from 'react'
 
 import { client, urlFor } from '../../client'
 
-const filters = ['all', 'frontend', 'fullstack']
-// const projects = ['portfolio website', 'amazon clone', 'invoice app', 'todo app', 'map API']
+// icons
+import { AiFillGithub, AiOutlineLink } from 'react-icons/ai'
+import { IoChevronBackCircleSharp } from 'react-icons/io5'
 
 function Work() {
 
-    const [works, setWorks] = useState([])
+    const { name } = useParams()
+
+    const [work, setWork] = useState({})
 
     useEffect(() => {
         const query = '*[_type == "works"]'
 
         client
             .fetch(query)
-            .then(data => setWorks(data))
+            .then(data => {
+                data.forEach(d => {
+                    if(d.name==name) {
+                        setWork(d)
+                        console.log(d.stack)
+                    }
+                })
+            })
             
     }, [])
+
+    const navigate = useNavigate()
+
+    const goTo = () => {
+        navigate('/work')
+    }
+
+    const { github, live, desc, stack, imgurl } = work 
 
     return (
         <div className="work">
 
-            <h1 className="work__title">
-                Previous work
-            </h1>
+            <header>
+            
+                <h1 className="work__title">
+                    {work.name}
+                </h1>
 
-            <ul className="work__filters">
-                { filters.map(filter => (
-                    <li key={filter}>
-                        {filter}
-                    </li>
+                <div className="work__links">
+
+                    <a
+                        href={github}
+                        target="_blank"
+                    >
+                        <AiFillGithub/>
+                    </a>
+
+                    <a
+                        href={live}
+                        target="_blank"
+                    >
+                        <AiOutlineLink/>
+                    </a>
+
+                </div>
+
+            </header>
+
+
+            <p className="work__desc">
+                {desc && desc}
+            </p>
+
+            <section className="work__stack">
+
+                <h3>
+                    Stack
+                </h3>
+
+                { stack && stack.map(s => (
+                    <span className="stack__item">
+                        {s}
+                    </span>
                 )) }
-            </ul>
-
-            <section className="work__content">
-
-                { works.map(work => <Box data={work} /> )}
-
+            
             </section>
+
+
+
+            { imgurl &&
+                <img
+                    src={urlFor(imgurl)}
+                    alt="screenshot"
+                    className="work__img"
+                />
+            }
 
         </div>
     )

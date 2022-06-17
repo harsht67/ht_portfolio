@@ -2,15 +2,31 @@
 import './Home.scss'
 
 import { images } from '../../constants'
+import { client } from '../../client'
 
 import { useNavigate } from 'react-router'
+import { useState, useEffect } from 'react'
 
 function Home() {
 
+    const [works, setWorks] = useState([])
+
+    useEffect(() => {
+        const query = '*[_type == "works"]'
+
+        client
+            .fetch(query)
+            .then(data => setWorks(data))
+    }, [])
+
     const navigate = useNavigate()
 
-    const goTo = () => {
+    const goToWorks = () => {
         navigate('/work')
+    }
+
+    const goToWork = (name) => {
+        navigate('/work/'+name)
     }
 
     return (
@@ -36,23 +52,24 @@ function Home() {
 
             </section>
 
-            <section className="home__projects">
+            <section className="home__works">
 
-                <h1 onClick={goTo}>
-                    Projects
+                <h1 onClick={goToWorks}>
+                    Previous work
                 </h1>
 
                 <ul>
 
-                    <li>Portfolio Website</li>
-
-                    <li>Amazon Clone</li>
-
-                    <li>Invoice App</li>
-
-                    <li>Todo App</li>
-                    
-                    <li>Maps API</li>
+                    { works && 
+                        works.map(work => (
+                            <li 
+                                key={work.name}
+                                onClick={() => goToWork(work.name)}
+                            >
+                                {work.name}
+                            </li>
+                        ))
+                    }
 
                 </ul>
 

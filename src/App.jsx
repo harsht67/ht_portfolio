@@ -2,7 +2,7 @@
 import './App.scss'
 
 // components
-import { Home, Header, Footer, Work, About, Contact, Project } from './features'
+import { Home, Header, Footer, Works, About, Contact, Work } from './features'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -18,9 +18,9 @@ function App() {
 
                     <Route path='/' element={<Home/>} />
 
-                    <Route path='/work' element={<Work/>} />
+                    <Route path='/work' element={<Works/>} />
 
-                    <Route path='/work/:name' element={<Project/>} />
+                    <Route path='/work/:name' element={<Work/>} />
 
                     <Route path='/about' element={<About/>} />
 

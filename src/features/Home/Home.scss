@@ -4,7 +4,7 @@
     padding: $pad-y $pad-x;
 
     .home__msg {
-        margin-block: 8rem;
+        margin-block: 6rem 9rem;
         width: 30%;
         
         h1 {
@@ -17,7 +17,7 @@
         }
 
         div {
-            margin-block-start: 0.5rem;
+            margin-block: 1rem;
 
             img {
                 margin-inline-end: 0.5rem;
@@ -33,11 +33,12 @@
 
     }
 
-    .home__projects {
+    .home__works {
 
         h1 {
             font-size: 1.25rem;
             margin-block-end: 1rem;
+            cursor: pointer;
         }
 
         ul {
@@ -48,6 +49,7 @@
             li {
                 font-size: 3rem;
                 padding: 1rem 0;
+                text-transform: capitalize;
 
                 &:not(:last-child) {
                     border-block-end: 1px solid #aeaeae;
