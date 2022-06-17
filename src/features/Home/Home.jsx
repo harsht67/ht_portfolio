@@ -5,6 +5,7 @@ import { images } from '../../constants'
 import { client } from '../../client'
 
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 function Home() {
@@ -20,10 +21,6 @@ function Home() {
     }, [])
 
     const navigate = useNavigate()
-
-    const goToWorks = () => {
-        navigate('/work')
-    }
 
     const goToWork = (name) => {
         navigate('/work/'+name)
@@ -54,8 +51,10 @@ function Home() {
 
             <section className="home__works">
 
-                <h1 onClick={goToWorks}>
-                    Previous work
+                <h1>
+                    <Link to="/work">
+                        Previous work
+                    </Link>
                 </h1>
 
                 <ul>
@@ -86,9 +85,12 @@ function Home() {
                     harsh@gmail.com
                 </p>
 
-                <button className="contact__btn">
+                <Link 
+                    className="contact__btn"
+                    to="/contact"
+                >
                     Get in touch
-                </button>
+                </Link>
 
 
             </section>

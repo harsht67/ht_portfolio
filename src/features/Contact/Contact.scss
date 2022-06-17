@@ -23,13 +23,21 @@
             margin-block-end: 2rem;
 
             input, textarea {
-                all: unset;
+                border: none;
+                outline: none;
+                font-size: inherit;
                 width: 100%;
                 padding: 1rem 0;
             }
 
             textarea {
                 height: 8rem;
+            }
+
+            div {
+                color: #f00;
+                font-size: $fs-300;
+                font-weight: 500;
             }
             
         }

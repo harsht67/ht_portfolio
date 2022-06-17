@@ -3,6 +3,10 @@
 .home {
     padding: $pad-y $pad-x;
 
+    a {
+        text-decoration: none;
+    }
+
     .home__msg {
         margin-block: 6rem 9rem;
         width: 30%;
@@ -79,7 +83,7 @@
         }
 
         .contact__btn {
-            all: unset;
+            display: inline-block;
             margin-block: 1rem;
             padding: 1rem;
             border: 1px solid #fff;
