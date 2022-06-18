@@ -30,10 +30,18 @@ function Home() {
         <div className="home">
 
             <section className="home__msg">
+                
+                <div className="msg__vertical">
+                        web developer
+                </div>
 
-                <h1>Harsh</h1>
+                <p className="msg__greeting">
+                    नमस्ते!
+                </p>
 
-                <h3>&gt; Web Developer</h3>
+                <p className="msg__name">
+                    I'm Harsh
+                </p>
 
                 <div>
 
@@ -51,11 +59,11 @@ function Home() {
 
             <section className="home__works">
 
-                <h1>
+                <h3>
                     <Link to="/work">
                         Previous work
                     </Link>
-                </h1>
+                </h3>
 
                 <ul>
 
@@ -72,14 +80,18 @@ function Home() {
 
                 </ul>
 
+                <button>
+                    All work
+                </button>
+
 
             </section>
 
             <section className="home__contact">
 
-                <h1>
+                <h3>
                     Let's work together
-                </h1>
+                </h3>
 
                 <p className="contact__email">
                     harsh@gmail.com

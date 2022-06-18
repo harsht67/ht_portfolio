@@ -4,7 +4,6 @@
 
     .box__img {
         position: relative;
-        border: 1px solid #fff;
         width: 100%;
         aspect-ratio: 1/0.75;
 
@@ -50,6 +49,7 @@
     .box__name {
         text-transform: capitalize;
         font-size: $fs-600;
+        font-weight: 500;
         padding: 1rem 0;
         letter-spacing: 0.05em;
         margin-block-start: 0.25rem;

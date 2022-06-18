@@ -13,13 +13,11 @@
         font-weight: 700;
     }
 
-    > section {
-        margin-block-end: 9rem;
+    section {
+        @include p();
         display: flex;
         gap: 2rem;
-        font-size: 1.25rem;
-        line-height: 1.5em;
-        letter-spacing: 0.05em;
+        margin-block-end: 9rem;
 
         > *:first-child {
             width: 20%;
@@ -31,6 +29,17 @@
 
     }
 
+    .about__cv {
+        font-size: $fs-500;
+        font-weight: 500;
+        margin-block-end: 4.5rem;
+
+        a {
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+    
     .skills__icons {
         display: flex;
         gap: 4rem;

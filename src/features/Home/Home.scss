@@ -8,16 +8,25 @@
     }
 
     .home__msg {
+        position: relative;
+        margin-inline-start: 4rem;
         margin-block: 6rem 9rem;
         width: 30%;
-        
-        h1 {
-            font-size: 4rem;
-        }
 
-        h3 {
-            font-size: 1.5rem;
-            font-family: 'roboto mono';
+        .msg__vertical {
+            position: absolute;
+            left: -11rem;
+            bottom: 6.75rem;
+            transform: rotate(270deg);
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .msg__greeting, .msg__name {
+            font-size: $fs-800;
+            font-weight: 700;
         }
 
         div {
@@ -32,27 +41,35 @@
         }
 
         p {
-            font-size: 1.25rem;
+            font-size: $fs-400;
+            letter-spacing: 0.025em;
+            line-height: 1.25em;
         }
 
     }
 
     .home__works {
+        margin-block-end: 10rem;
 
-        h1 {
-            font-size: 1.25rem;
+        h3 {
+            font-size: $fs-300;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             margin-block-end: 1rem;
             cursor: pointer;
+            margin-block-end: 2rem;
         }
 
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
+            border-block: 1px solid #aeaeae;
         
             li {
-                font-size: 3rem;
-                padding: 1rem 0;
+                font-size: $fs-800;
+                padding: 2rem 0;
                 text-transform: capitalize;
 
                 &:not(:last-child) {
@@ -65,30 +82,35 @@
                 }
             }
         }
+
+        button {
+            @include button();
+            display: block;
+            margin: 2rem auto 0;
+        }
     
     }
 
     .home__contact {
-        margin-block: 5rem;
+        margin-block-end: 5rem;
+        width: fit-content;
+        margin: 0 auto 5rem;
 
-        h1 {
-            font-size: 4rem;
+        h3 {
+            font-size: $fs-900;
             font-weight: 500;
-            margin-block: 1rem;
+            margin-block-end: 2rem;
         }
 
         .contact__email {
-            font-size: 1.5rem;
+            font-size: $fs-600;
             cursor: pointer;
+            margin-block-end: 2rem;
         }
 
         .contact__btn {
             display: inline-block;
-            margin-block: 1rem;
-            padding: 1rem;
-            border: 1px solid #fff;
-            font-size: 1.25rem;
-            cursor: pointer;
+            @include button();
         }
 
     }

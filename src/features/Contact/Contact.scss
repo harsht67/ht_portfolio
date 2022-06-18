@@ -1,7 +1,7 @@
 @use '../../sass' as *;
 
 .contact {
-    padding: $pad-y $pad-x;
+    padding: $pad-y $pad-x 2*$pad-y;
 
     .contact__title {
         @include title();
@@ -43,12 +43,7 @@
         }
         
         button {
-            all: unset;
-            border: 1px solid #fff;
-            padding: 1rem 2rem;
-            text-transform: capitalize;
-            font-size: 1.25rem;
-            cursor: pointer;
+            @include button();
         }
 
     }

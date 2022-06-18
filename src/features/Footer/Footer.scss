@@ -1,18 +1,23 @@
+@use '../../sass' as *;
+
 .footer {
-    padding: 1rem 4rem;
+    padding: 1rem $pad-x;
     border-block-start: 1px solid #fff;
     display: flex;
     justify-content: space-between;
 
     .footer__info {
 
-        p:first-child {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-block-end: 0.25em;
+        .footer__logo {
+            font-family: 'roboto mono';
+            font-size: 1.75rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            margin-block-end: 1rem;
         }
 
-        p:last-child {
+        div {
             font-size: 0.9rem;
         }
 

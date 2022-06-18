@@ -23,7 +23,7 @@ function About() {
                 Know about me 
             </h1>
 
-            <section>
+            <section className="about__desc">
 
                 <h3 className="about__subtitle">
                     Summary
@@ -72,7 +72,9 @@ function About() {
 
             </section>
 
-            <section></section>
+            <p className="about__cv">
+                Looking for my <a>CV</a>?
+            </p>
 
         </div>
     )

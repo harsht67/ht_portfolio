@@ -5,8 +5,25 @@
     font-weight: 500;
 }
 
+@mixin button {
+    border: 1px solid #fff;
+    outline: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: $fs-400;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
 @mixin centerUsingFlex {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin p {
+    font-size: 1.15rem;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
 }

@@ -13,13 +13,15 @@ function Footer() {
 
             <section className="footer__info">
                 
-                <p>
-                    Harsh <br/> Tomar
+                <p className="footer__logo">
+                    &lt;HT/&gt;
                 </p>
 
-                <p>
-                    <BiCopyright/>2022, Built &#38; designed by <br/> Harsh Tomar
-                </p>
+                <div>
+                
+                    <BiCopyright/> 2022, Built &#38; designed by <br/> Harsh Tomar
+                
+                </div>
 
             </section>
 

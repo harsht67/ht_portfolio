@@ -4,7 +4,7 @@ import mail from '../assets/mail.png'
 import phone from '../assets/phone.svg'
 
 export default {
-    github, 
+    github,
     linkedin,
     mail,
     phone,
