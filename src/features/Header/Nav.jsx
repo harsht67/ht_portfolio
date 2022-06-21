@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 
-function Navigation() {
+function Navigation(props) {
     return (
-        <ul>
+        <ul {...props} >
             
             <li>
                 <Link to='/'>

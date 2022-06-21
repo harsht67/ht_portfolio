@@ -5,9 +5,12 @@ import './Header.scss'
 import Navigation from './Nav'
 
 // icons
-import { RiMoonFill, RiSunFill } from 'react-icons/ri'
-import { GrDocumentDownload, GrClose } from 'react-icons/gr'
+import { RiMoonFill, RiSunFill, RiCloseFill } from 'react-icons/ri'
+import { GrDocumentDownload } from 'react-icons/gr'
 import { GiHamburgerMenu } from 'react-icons/gi'
+
+// images
+import { images } from '../../constants'
 
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -24,25 +27,30 @@ function Header(props) {
     return (
         <header className="header">
 
-            <div className="menu f5">
-            
-                <GiHamburgerMenu 
-                    className="menu__btn" 
-                    onClick={toggleMenu}
-                />
+            <div className={`menu f5 ${menuDisplay?'menu-open':'menu-close'} `}>
 
-                { menuDisplay &&
+                <div 
+                    className="menu__btnContainer" 
+                    onClick={toggleMenu}
+                >
+                    <span className="menu__btn"></span>
+                </div>
+
+                {/* { menuDisplay && */}
                     <div className="menu__content">
 
-                        <GrClose 
-                            className="content__btn"
-                            onClick={toggleMenu}
-                        />
+                        <Navigation onClick={toggleMenu} />
 
-                        <Navigation/>
+                        <div className="content__socials">
+
+                            <img src={images.github} alt="github img" />
+
+                            <img src={images.linkedin} alt="linkedin img" /> 
+
+                        </div>
 
                     </div>
-                }
+                {/* } */}
             
             </div>
 

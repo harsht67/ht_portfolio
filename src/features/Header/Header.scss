@@ -9,6 +9,7 @@
     @include theme('border-color', 'color');
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     position: sticky;
     top: 0;
@@ -40,39 +41,99 @@
 
     .menu {
 
-        .menu__btn {
-            padding-block-start: 0.25em;
-            font-size: 2rem;
+        .menu__btnContainer {
+            position: relative;
+            z-index: 20;
+            width: 2rem;
+            height: 2rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu__btn {
+            display: block;
+            position: relative;
+
+            &, &::before, &::after {
+                width: 1.5rem;
+                height: 2.5px;
+                @include theme('background-color', 'txt');
+                transition: transform 0.25s ease-in-out, opacity 0.1s linear;
+            }
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+            }
+
+            &::before { top: 6px; }
+            &::after { bottom: 6px; }
+
         }
 
         .menu__content {
             padding: 1rem;
             position: fixed;
             inset: 0;
-            background-color: #008080;
+            transform: translateX(-100%);
+            transition: transform 0.25s cubic-bezier(.5, 0, .5, 1);
+            @include theme('background', 'bck');
             display: flex;
             flex-flow: column;
-
-            .content__btn {
-                font-size: 1.5rem;
-                cursor: pointer
-            }
 
             ul {
                 @extend %ul;
                 width: fit-content;
-                margin: 2rem auto;
+                margin-block: 6rem 4rem;
                 flex-flow: column;
 
                 li {
-                    margin-block-end: 2rem;
+                    font-size: 2.5rem;
+                    font-weight: 500;
+                    margin-block-end: 2.5rem;
                 }
             }
+
+            .content__socials {
+                width: fit-content;
+                margin: 0 auto;
+
+                img {
+                    width: 2.5rem;
+                    margin-inline-end: 0.5rem;
+                    cursor: pointer;
+                }
+
+            }
+
         }
 
         @include mq(lg) {
             display: none;
+        }
+
+    }
+
+    .menu-open {
+
+        .menu__btn {
+            transform: rotate(45deg);
+
+            &::before {
+                opacity: 0;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+                bottom: 0;
+            }
+            
+        }
+
+        .menu__content {
+            transform: translateX(0);
         }
 
     }
@@ -82,7 +143,7 @@
 
         @include mq(lg) {
             width: fit-content;
-        }
+        }        
     }
 
     .header__nav {
