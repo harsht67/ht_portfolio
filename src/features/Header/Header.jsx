@@ -12,7 +12,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-function Header() {
+function Header(props) {
 
     const [menuDisplay, setMenuDisplay] = useState(false)
 
@@ -61,9 +61,15 @@ function Header() {
             
             </nav>
 
-            <div className="header__btns">
+            <div 
+                className="header__btns"
+                onClick={() => props.toggleTheme()}
+            >
             
-                <RiMoonFill/>
+                {props.theme=='light'
+                    ? <RiMoonFill/>
+                    : <RiSunFill/>
+                }
             
             </div>
 

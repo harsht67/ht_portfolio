@@ -2,8 +2,11 @@
 
 .header {
     padding: 1rem;
-    background: #1a1c1d;
-    border-block-end: 1px solid #fff;
+    @include theme('background', 'bck');
+    @include theme('color', 'txt');
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    @include theme('border-color', 'color');
     display: flex;
     align-items: center;
     gap: 1rem;

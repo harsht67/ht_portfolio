@@ -5,14 +5,25 @@ import './App.scss'
 import { Header, Footer, Home, About, Works, Work, Contact } from './features'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+
+    const [theme, setTheme] = useState('light')
+
+    const toggleTheme = () => {
+        setTheme(prev => prev=='light'?'dark':'light')
+    }
+
     return (
-        <div className="app">
+        <div className={`app theme-${theme}`}>
 
             <Router>
             
-                <Header/>
+                <Header 
+                    theme={theme}
+                    toggleTheme={toggleTheme} 
+                />
 
                 <Routes>
 

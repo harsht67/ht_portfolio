@@ -2,6 +2,8 @@
 
 .home {
     padding: 1rem;
+    @include theme('background', 'bck');
+    @include theme('color', 'txt');
 
     > * {
         margin-block-end: 5rem;
@@ -84,19 +86,22 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
-            border-block: 1px solid #aeaeae;
+            border-width: 1px 0;
+            border-style: solid;
+            @include theme('border-color', 'txt');
         
             li {
                 padding: 2rem 0;
                 text-transform: capitalize;
 
                 &:not(:last-child) {
-                    border-block-end: 1px solid #aeaeae;
+                    border-width: 0 0 1px 0;
+                    border-style: solid;
+                    @include theme('border-color', 'txt');
                 }
 
                 &:hover {
                     cursor: pointer;
-                    color: #dedede;
                 }
             }
         }

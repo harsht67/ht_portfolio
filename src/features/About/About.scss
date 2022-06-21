@@ -2,6 +2,8 @@
 
 .about {
     padding: 2rem 1rem;
+    @include theme('background', 'bck');
+    @include theme('color', 'txt');
 
     @include mq(sm) {
         padding: 2.5rem 2rem;

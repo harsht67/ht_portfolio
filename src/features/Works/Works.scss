@@ -2,6 +2,8 @@
 
 .works {
     padding: 2rem 1rem;
+    @include theme('background', 'bck');
+    @include theme('color', 'txt');
 
     @include mq(sm) {
         padding: 2.5rem 2rem;
@@ -28,7 +30,9 @@
         margin-block-end: 4rem;
 
         li {
-            border: 1px solid #fff;
+            border-width: 1px;
+            border-style: solid;
+            @include theme('border-color', 'txt');
             border-radius: 2rem;
             padding: 1em 1.5em;
             font-weight: 500;
