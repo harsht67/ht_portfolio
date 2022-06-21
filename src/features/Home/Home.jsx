@@ -29,21 +29,21 @@ function Home() {
     return (
         <div className="home">
 
-            <section className="home__msg">
+            <section className="msg">
                 
-                <div className="msg__vertical">
-                        web developer
-                </div>
+                {/* <div className="msg__vertical f5">
+                    web developer
+                </div> */}
 
-                <p className="msg__greeting">
+                <p className="msg__greeting f2">
                     नमस्ते!
                 </p>
 
-                <p className="msg__name">
+                <p className="msg__name f2">
                     I'm Harsh
                 </p>
 
-                <div>
+                <div className="msg__socials">
 
                     <img src={images.github} alt="github image" />
 
@@ -51,7 +51,7 @@ function Home() {
 
                 </div>
 
-                <p> 
+                <p className="msg__brief text"> 
                     I love building beautiful interfaces, web apps, and everything in between!
                 </p>
 
@@ -59,13 +59,13 @@ function Home() {
 
             <section className="home__works">
 
-                <h3>
+                <h3 className="sm-text">
                     <Link to="/work">
                         Previous work
                     </Link>
                 </h3>
 
-                <ul>
+                <ul className="f2">
 
                     { works && 
                         works.map(work => (
@@ -80,26 +80,26 @@ function Home() {
 
                 </ul>
 
-                <button>
+                <button className="button text">
                     All work
                 </button>
 
 
             </section>
 
-            <section className="home__contact">
+            <section className="contact">
 
-                <h3>
+                <h3 className="f1">
                     Let's work together
                 </h3>
 
-                <p className="contact__email">
+                <p className="contact__email f6">
                     harsh@gmail.com
                 </p>
 
                 <Link 
-                    className="contact__btn"
                     to="/contact"
+                    className="contact__btn button text"
                 >
                     Get in touch
                 </Link>

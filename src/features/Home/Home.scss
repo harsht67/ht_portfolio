@@ -1,58 +1,77 @@
-@use '../../sass' as *;
+@use '../../scss' as *;
 
 .home {
-    padding: $pad-y $pad-x;
+    padding: 1rem;
 
-    a {
-        text-decoration: none;
+    > * {
+        margin-block-end: 5rem;
     }
 
-    .home__msg {
+    @include mq(sm) {
+        padding-inline: 2rem;
+    }
+
+    @include mq(md) {
+        padding-inline: 4rem;
+
+        > * {
+            margin-block-end: 7.5rem;
+        }
+    }
+
+    @include mq(lg) {
+        padding: 2rem 8rem;
+
+        > * {
+            margin-block-end: 10rem;
+        }
+    }
+
+    .msg {
+        margin-block-start: 4rem;
         position: relative;
-        margin-inline-start: 4rem;
-        margin-block: 6rem 9rem;
-        width: 30%;
+        // margin-inline-start: 2rem;
+        // margin-block: 6rem 9rem;
+        width: 60%;
+
+        @include mq(md) {
+            width: 45%;
+        }
+
+        @include mq(lg) {
+            width: 35%;
+        }
 
         .msg__vertical {
             position: absolute;
-            left: -11rem;
-            bottom: 6.75rem;
+            left: -6.5rem;
+            bottom: 5.25rem;
             transform: rotate(270deg);
-            font-size: 2rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
         
         .msg__greeting, .msg__name {
-            font-size: $fs-800;
             font-weight: 700;
         }
 
-        div {
+        .msg__socials {
             margin-block: 1rem;
 
             img {
+                width: clamp(1.5rem, 5vw, 2rem);
                 margin-inline-end: 0.5rem;
-                width: 2rem;
                 cursor: pointer;
             }
         
         }
 
-        p {
-            font-size: $fs-400;
-            letter-spacing: 0.025em;
-            line-height: 1.25em;
-        }
-
     }
 
     .home__works {
-        margin-block-end: 10rem;
 
         h3 {
-            font-size: $fs-300;
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -68,7 +87,6 @@
             border-block: 1px solid #aeaeae;
         
             li {
-                font-size: $fs-800;
                 padding: 2rem 0;
                 text-transform: capitalize;
 
@@ -84,33 +102,28 @@
         }
 
         button {
-            @include button();
             display: block;
             margin: 2rem auto 0;
         }
     
     }
 
-    .home__contact {
-        margin-block-end: 5rem;
+    .contact {
         width: fit-content;
         margin: 0 auto 5rem;
 
         h3 {
-            font-size: $fs-900;
             font-weight: 500;
             margin-block-end: 2rem;
         }
 
         .contact__email {
-            font-size: $fs-600;
             cursor: pointer;
             margin-block-end: 2rem;
         }
 
         .contact__btn {
             display: inline-block;
-            @include button();
         }
 
     }

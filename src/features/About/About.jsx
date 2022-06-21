@@ -19,17 +19,17 @@ function About() {
     return (
         <div className="about">
 
-            <h1 className="about__title">
+            <h1 className="about__title title">
                 Know about me 
             </h1>
 
             <section className="about__desc">
 
-                <h3 className="about__subtitle">
+                <h3 className="about__subtitle f6">
                     Summary
                 </h3>
 
-                <p>
+                <p className="lg-text">
                     As a web developer, I enjoy bridging the gap between engineering and 
                     design — combining my technical knowledge with my keen eye for design 
                     to create a beautiful product. My goal is to always build applications 
@@ -41,11 +41,11 @@ function About() {
 
             <section className="about__skills">
 
-                <h3 className="about__subtitle">
+                <h3 className="about__subtitle f6">
                     Skills
                 </h3>
 
-                <div className="skills__icons">
+                <div className="about__img">
 
                     { skills.map(skill => (
                         <img 
@@ -61,18 +61,18 @@ function About() {
 
             <section className="about__education">
 
-                <h3 className="about__subtitle">
+                <h3 className="about__subtitle f6">
                     Education
                 </h3>
 
-                <p>
+                <p className="lg-text">
                     Graduated from <b>Keshav Mahavidhlaya Delhi University</b> after completing 
                     Bachelor of Science in Computer Science
                 </p>
 
             </section>
 
-            <p className="about__cv">
+            <p className="about__cv f7">
                 Looking for my <a>CV</a>?
             </p>
 

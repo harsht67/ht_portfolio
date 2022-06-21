@@ -1,50 +1,111 @@
-@use '../../sass' as *;
+@use '../../scss' as *;
 
 .header {
-    padding: 1rem $pad-x;
+    padding: 1rem;
+    background: #1a1c1d;
     border-block-end: 1px solid #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 1rem;
     position: sticky;
     top: 0;
     z-index: 10;
 
-    a {
-        text-decoration: none;
+    @include mq(sm) {
+        padding-inline: 2rem;
+    }
+
+    @include mq(md) {
+        padding: 1rem 4rem;
+    }
+
+    @include mq(lg) {
+        padding: 1rem 8rem;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    %ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .menu {
+
+        .menu__btn {
+            padding-block-start: 0.25em;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .menu__content {
+            padding: 1rem;
+            position: fixed;
+            inset: 0;
+            background-color: #008080;
+            display: flex;
+            flex-flow: column;
+
+            .content__btn {
+                font-size: 1.5rem;
+                cursor: pointer
+            }
+
+            ul {
+                @extend %ul;
+                width: fit-content;
+                margin: 2rem auto;
+                flex-flow: column;
+
+                li {
+                    margin-block-end: 2rem;
+                }
+            }
+        }
+
+        @include mq(lg) {
+            display: none;
+        }
+
     }
 
     .header__logo {
-        font-family: 'roboto mono';
-        font-size: 1.75rem;
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        cursor: pointer;
-    }
+        width: 100%;
 
-    .header__nav {
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-
-            li {
-                margin-inline-end: 1em;
-                text-transform: uppercase;
-                font-size: 1rem;
-                font-size: $fs-300;
-                font-weight: 600;
-                letter-spacing: 0.1em;
-                cursor: pointer;
-            }
+        @include mq(lg) {
+            width: fit-content;
         }
     }
 
-    .header__themeBtn {
+    .header__nav {
+        display: none;
+
+        ul {
+            @extend %ul;
+
+            li {
+                margin-inline-end: 1rem;
+            }
+        }
+
+        @include mq(lg) {
+            display: initial;
+        }
+    }
+
+    .header__btns {
         font-size: 1.25rem;
-        cursor: pointer;
+        padding-block-start: 0.25em;
+
+        > * {
+            cursor: pointer;
+        }
+    
     }
 
 }

@@ -7,17 +7,24 @@ import { BiCopyright } from 'react-icons/bi'
 // images
 import { images } from '../../constants'
 
+import { Link } from 'react-router-dom'
+
 function Footer() {
     return (
         <footer className="footer">
 
             <section className="footer__info">
                 
-                <p className="footer__logo">
-                    &lt;HT/&gt;
-                </p>
+                <Link 
+                    to="/" 
+                    className="footer__logo logo"
+                >
 
-                <div>
+                    &lt;HT/&gt;
+                
+                </Link>
+
+                <div className="footer__copyright sm-text">
                 
                     <BiCopyright/> 2022, Built &#38; designed by <br/> Harsh Tomar
                 
@@ -27,9 +34,9 @@ function Footer() {
 
             <section className="footer__socials">
 
-                <img src={images.github} alt="mail img" />
+                <img src={images.github} alt="github img" />
 
-                <img src={images.linkedin} alt="mail img" /> 
+                <img src={images.linkedin} alt="linkedin img" /> 
 
             </section>
 

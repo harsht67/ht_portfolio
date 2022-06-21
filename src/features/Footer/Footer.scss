@@ -1,33 +1,39 @@
-@use '../../sass' as *;
+@use '../../scss' as *;
 
 .footer {
-    padding: 1rem $pad-x;
+    padding: 1rem;
     border-block-start: 1px solid #fff;
     display: flex;
     justify-content: space-between;
 
+    @include mq(sm) {
+        padding-inline: 2rem;
+    }
+
+    @include mq(md) {
+        padding: 1rem 4rem;
+    }
+
+    @include mq(lg) {
+        padding: 1rem 8rem;
+    }
+
     .footer__info {
 
         .footer__logo {
-            font-family: 'roboto mono';
-            font-size: 1.75rem;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            cursor: pointer;
             margin-block-end: 1rem;
         }
 
-        div {
+        .footer__copyright {
             font-size: 0.9rem;
         }
 
     }
 
     .footer__socials {
-        font-size: 2rem;
 
         img {
-            width: 2rem;
+            width: clamp(1.5rem, 5vw, 2rem);
             cursor: pointer;
             margin-inline-end: 0.5rem;
         }

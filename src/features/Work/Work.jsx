@@ -1,7 +1,7 @@
 // styles
 import './Work.scss'
 
-import { useNavigate, useParams } from 'react-router'
+import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
 
 import { client, urlFor } from '../../client'
@@ -32,12 +32,6 @@ function Work() {
             
     }, [])
 
-    const navigate = useNavigate()
-
-    const goTo = () => {
-        navigate('/work')
-    }
-
     const { github, live, desc, stack, imgurl } = work 
 
     return (
@@ -45,13 +39,16 @@ function Work() {
 
             <header>
             
-                <h1 className="work__title">
+                <h1 className="work__title f3">
+
                     {work.name}
+                
                 </h1>
 
-                <div className="work__links">
+                <div className="work__links f7">
 
                     <a
+                        className="flex--center"
                         href={github}
                         target="_blank"
                     >
@@ -59,6 +56,7 @@ function Work() {
                     </a>
 
                     <a
+                        className="flex--center"
                         href={live}
                         target="_blank"
                     >
@@ -70,13 +68,15 @@ function Work() {
             </header>
 
 
-            <p className="work__desc">
+            <p className="work__desc lg-text">
+                
                 {desc && desc}
+            
             </p>
 
-            <section className="work__stack">
+            <section className="stack sm-text">
 
-                <h3>
+                <h3 className="f7">
                     Stack
                 </h3>
 
@@ -87,8 +87,6 @@ function Work() {
                 )) }
             
             </section>
-
-
 
             { imgurl &&
                 <img

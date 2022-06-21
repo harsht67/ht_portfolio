@@ -1,51 +1,42 @@
 // styles
 import './Box.scss'
 
-import { urlFor } from '../../client'
-
-import { useNavigate } from 'react-router'
-import { motion } from 'framer-motion'
-
 // icons
 import { AiFillGithub, AiFillEye, AiOutlineLink } from 'react-icons/ai'
 
+import { urlFor } from '../../client'
+
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+
 function Box({data}) {
-
-    const navigate = useNavigate()
-
-    const goToWork = () => {
-        navigate('/work/'+name)
-    }
 
     const { name, imgurl, github, live } = data
 
     return (
-        <div 
-            key={data}
-            className="box"
-        >
+        <div className="box">
 
             <div className="box__img">
                 
                 <img
                     src={urlFor(imgurl)}
-                    alt="screenshot of work"
+                    alt="screenshots"
                 />
 
                 <motion.div
+                    className="hover"
                     whileHover={{ opacity: [0, 1] }}
                     transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                    className="box__hover"
                 >
 
-                    <div 
+                    <Link 
+                        to={`/work/${name}`}
                         className="hover__item" 
-                        onClick={goToWork}
                     >
 
                         <AiFillEye/>
 
-                    </div>
+                    </Link>
 
                     <a 
                         className="hover__item"
@@ -71,8 +62,10 @@ function Box({data}) {
 
             </div>
             
-            <p className="box__name">
+            <p className="box__name f6">
+
                 {name}
+            
             </p>
    
         </div>

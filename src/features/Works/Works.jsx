@@ -54,11 +54,12 @@ function Works() {
     return (
         <div className="works">
 
-            <h1 className="works__title">
+            <h1 className="works__title title">
                 Previous work
             </h1>
 
-            <ul className="works__filters">
+            <ul className="works__filters sm-text">
+
                 { filters.map(filter => (
                     <li 
                         key={filter}
@@ -68,6 +69,7 @@ function Works() {
                         {filter}
                     </li>
                 )) }
+
             </ul>
 
             <section className="works__content">

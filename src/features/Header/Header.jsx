@@ -1,61 +1,71 @@
 // styles
 import './Header.scss'
 
+// components
+import Navigation from './Nav'
+
 // icons
 import { RiMoonFill, RiSunFill } from 'react-icons/ri'
+import { GrDocumentDownload, GrClose } from 'react-icons/gr'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
-import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 function Header() {
 
-    const navigate = useNavigate()
+    const [menuDisplay, setMenuDisplay] = useState(false)
 
-    const goTo = () => {
-        navigate('/')
+    // opens/closes hamburger menu
+    const toggleMenu = () => {
+        setMenuDisplay(prev => !prev)
     }
 
     return (
         <header className="header">
 
-            <span 
-                className="header__logo"
-                onClick={goTo}
+            <div className="menu f5">
+            
+                <GiHamburgerMenu 
+                    className="menu__btn" 
+                    onClick={toggleMenu}
+                />
+
+                { menuDisplay &&
+                    <div className="menu__content">
+
+                        <GrClose 
+                            className="content__btn"
+                            onClick={toggleMenu}
+                        />
+
+                        <Navigation/>
+
+                    </div>
+                }
+            
+            </div>
+
+            <Link 
+                to="/"
+                className="header__logo logo"
             >
 
                 &lt;HT/&gt;
             
-            </span>
+            </Link>
 
-            <nav className="header__nav">
+            <nav className="header__nav sm-text">
             
-                <ul>
-            
-                    <li>
-                        <Link to='/'>home</Link>
-                    </li>
-            
-                    <li>
-                        <Link to='about'>about</Link>
-                    </li>
-            
-                    <li>
-                        <Link to='/work'>work</Link>
-                    </li>
-            
-                    <li>
-                        <Link to='contact'>contact</Link>
-                    </li>
-            
-                </ul>
+                <Navigation/>
             
             </nav>
 
-            <span className="header__themeBtn">
+            <div className="header__btns">
             
                 <RiMoonFill/>
             
-            </span>
+            </div>
 
         </header>
     )

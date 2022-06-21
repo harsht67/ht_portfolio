@@ -45,11 +45,11 @@ function Contact() {
     return (
         <div className="contact">
 
-            <h1 className="contact__title">
+            <h1 className="contact__title title">
                 Contact 
             </h1>
 
-            <div className="contact__content">
+            <div className="contact__content f7">
 
                 <form 
                     className="contact__form"
@@ -113,20 +113,20 @@ function Contact() {
 
                     </label>
 
-                    <button>
+                    <button className="button">
                         send
                     </button>
 
                 </form>
 
-                <aside className="contact__links">
+                <aside className="contact__links lg-text">
 
                     <p>
-                    <img src={images.phone} alt="phone image" /> 9582594496
+                        <img src={images.phone} alt="phone image" /> 9582594496
                     </p>
 
                     <p>
-                    <img src={images.mail} alt="mail image" /> harshtomar@gmail.com
+                        <img src={images.mail} alt="mail image" /> harshtomar@gmail.com
                     </p>
 
                     <p>
