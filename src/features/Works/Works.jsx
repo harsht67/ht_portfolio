@@ -58,7 +58,7 @@ function Works() {
                 Previous work
             </h1>
 
-            <ul className="works__filters sm-text">
+            <ul className="works__filters text">
 
                 { filters.map(filter => (
                     <li 

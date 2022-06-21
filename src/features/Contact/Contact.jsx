@@ -113,7 +113,7 @@ function Contact() {
 
                     </label>
 
-                    <button className="button">
+                    <button className="button text">
                         send
                     </button>
 

@@ -32,9 +32,7 @@
     .msg {
         margin-block-start: 4rem;
         position: relative;
-        // margin-inline-start: 2rem;
-        // margin-block: 6rem 9rem;
-        width: 60%;
+        margin-inline-start: 2.5rem;
 
         @include mq(md) {
             width: 45%;
@@ -46,9 +44,10 @@
 
         .msg__vertical {
             position: absolute;
-            left: -6.5rem;
-            bottom: 5.25rem;
+            left: -5em;
+            bottom: 3.85em;
             transform: rotate(270deg);
+            font-size: 2rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -62,11 +61,20 @@
             margin-block: 1rem;
 
             img {
-                width: clamp(1.5rem, 5vw, 2rem);
+                width: clamp(2.25rem, 6vw, 2.5rem);
                 margin-inline-end: 0.5rem;
                 cursor: pointer;
             }
         
+        }
+
+        .msg__brief {
+            width: 75%;
+
+            @include mq(md) {
+                width: 100%;
+            }
+
         }
 
     }
@@ -106,9 +114,15 @@
             }
         }
 
-        button {
+        .button {
             display: block;
+            width: fit-content;
             margin: 2rem auto 0;
+
+            @include mq(md) {
+                margin-block-start: 4rem;
+            }
+
         }
     
     }

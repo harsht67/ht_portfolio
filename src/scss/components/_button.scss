@@ -1,16 +1,19 @@
 @use '../globals' as *;
 
 .button {
-    border: 1px solid #fff;
-    border-style: solid;
-    border-width: 1px;
-    @include theme('border-color', 'txt');
+    border: none;
     outline: none;
+    cursor: pointer;
     padding: 1em 1.5em;
     font-weight: 600;
+    @include theme("background", "txt");
+    @include theme("color", "bck");
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: none;
-    color: inherit;
-    cursor: pointer;
+    transition: opacity 0.25s;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
 }

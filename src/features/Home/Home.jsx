@@ -31,15 +31,15 @@ function Home() {
 
             <section className="msg">
                 
-                {/* <div className="msg__vertical f5">
+                <div className="msg__vertical f3">
                     web developer
-                </div> */}
+                </div>
 
-                <p className="msg__greeting f2">
+                <p className="msg__greeting f1">
                     नमस्ते!
                 </p>
 
-                <p className="msg__name f2">
+                <p className="msg__name f1">
                     I'm Harsh
                 </p>
 
@@ -51,7 +51,7 @@ function Home() {
 
                 </div>
 
-                <p className="msg__brief text"> 
+                <p className="msg__brief lg-text"> 
                     I love building beautiful interfaces, web apps, and everything in between!
                 </p>
 
@@ -80,9 +80,12 @@ function Home() {
 
                 </ul>
 
-                <button className="button text">
+                <Link 
+                    to="/works"
+                    className="button text"
+                >
                     All work
-                </button>
+                </Link>
 
 
             </section>
