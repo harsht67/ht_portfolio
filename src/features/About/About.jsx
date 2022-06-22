@@ -72,7 +72,7 @@ function About() {
 
             </section>
 
-            <p className="about__cv f7">
+            <p className="about__cv lg-text">
                 Looking for my <a>CV</a>?
             </p>
 

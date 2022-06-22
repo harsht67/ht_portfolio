@@ -2,10 +2,11 @@
 
 .work {
     padding: 2rem 1rem;
+    @include theme('background', 'bck');
+    @include theme('color', 'txt');
     display: flex;
     flex-flow: column;
     gap: 2rem;
-    margin-block-end: 5rem;
 
     @include mq(sm) {
         padding: 2.5rem 2rem;
@@ -30,6 +31,10 @@
         font-weight: 500;
     }
 
+    .work__subtitle {
+        margin-block-end: 0.25rem;
+    }
+
     .work__links {
         display: flex;
         gap: 0.5em;
@@ -44,18 +49,17 @@
     
     }
 
-    .stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-block-end: 5rem;
+    .work__stack {
 
-        h3 {
-            width: 100%;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        span {
-            border: 1px solid #fff;
+        li {
+            @include theme("background-color", "txt");
+            @include theme("color", "bck");
             padding: 1em 1.5em;
             border-radius: 2rem;
             font-weight: 500;
@@ -65,7 +69,13 @@
     }
 
     .work__img {
+        margin-block-start: 2rem;
         width: 100%;
+
+        @include mq(lg) {
+            margin-block-start: 4rem;
+        }
+
     }
 
 }

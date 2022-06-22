@@ -36,21 +36,23 @@ function Header(props) {
                     <span className="menu__btn"></span>
                 </div>
 
-                {/* { menuDisplay && */}
-                    <div className="menu__content">
+                <div className="menu__content">
 
-                        <Navigation onClick={toggleMenu} />
+                    <h2 className="content__title text">
+                        Navigation
+                    </h2>
 
-                        <div className="content__socials">
+                    <Navigation onClick={toggleMenu} />
 
-                            <img src={images.github} alt="github img" />
+                    <div className="content__socials">
 
-                            <img src={images.linkedin} alt="linkedin img" /> 
+                        <img src={images.github} alt="github img" />
 
-                        </div>
+                        <img src={images.linkedin} alt="linkedin img" /> 
 
                     </div>
-                {/* } */}
+
+                </div>
             
             </div>
 
@@ -63,7 +65,7 @@ function Header(props) {
             
             </Link>
 
-            <nav className="header__nav text">
+            <nav className="header__nav lg-text">
             
                 <Navigation/>
             

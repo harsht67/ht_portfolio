@@ -8,8 +8,7 @@
     font-weight: 600;
     @include theme("background", "txt");
     @include theme("color", "bck");
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
     transition: opacity 0.25s;
 
     &:hover {

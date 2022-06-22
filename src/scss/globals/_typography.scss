@@ -41,7 +41,7 @@ input, textarea {
 } 
 
 .f4 {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1.75rem, 5vw, 2rem);
 }
 
 .f5 {
@@ -57,43 +57,44 @@ input, textarea {
 } 
 
 .lg-text {
-    font-size: 1.05rem;
-    letter-spacing: 0.05em;
-    line-height: 1.5em;
+    font-size: 1.15rem;
+    letter-spacing: 0.015em;
+    line-height: 1.35em;
 
     @include mq(md) {
-        font-size: 1.15rem;
+        font-size: 1.25rem;
     }
 
     @include mq(lg) {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
     }
 }
 
 .text {
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    line-height: 1.5em;
+    font-size: 0.9rem;
+    letter-spacing: 0.015em;
+    line-height: 1.35em;
 
     @include mq(md) {
-        font-size: 0.9;
+        font-size: 1;
     }
 
     @include mq(lg) {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
 .sm-text {
     font-size: 0.75rem;
-    line-height: 1.25;
+    letter-spacing: 0.015em;
+    line-height: 1.35;
 
     @include mq(md) {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     @include mq(lg) {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
 }

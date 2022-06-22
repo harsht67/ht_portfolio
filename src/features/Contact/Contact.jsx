@@ -49,10 +49,10 @@ function Contact() {
                 Contact 
             </h1>
 
-            <div className="contact__content f7">
+            <div className="contact__content">
 
                 <form 
-                    className="contact__form"
+                    className="contact__form lg-text"
                     onSubmit={handleSubmit}
                 >
 
@@ -114,7 +114,7 @@ function Contact() {
                     </label>
 
                     <button className="button text">
-                        send
+                        Send
                     </button>
 
                 </form>

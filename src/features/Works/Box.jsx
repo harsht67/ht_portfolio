@@ -18,10 +18,11 @@ function Box({data}) {
 
             <div className="box__img">
                 
-                <img
-                    src={urlFor(imgurl)}
-                    alt="screenshots"
-                />
+                <div 
+                    style={{backgroundImage: `url(${urlFor(imgurl)})`}}
+                    className="img"
+                >
+                </div>
 
                 <motion.div
                     className="hover"
@@ -62,7 +63,7 @@ function Box({data}) {
 
             </div>
             
-            <p className="box__name f6">
+            <p className="box__name f4">
 
                 {name}
             

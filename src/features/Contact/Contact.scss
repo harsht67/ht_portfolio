@@ -24,12 +24,8 @@
     .contact__content {
         display: flex;
         flex-flow: column;
-        gap: 5rem;
+        gap: 7.5rem;
         margin-block-end: 5rem;
-
-        @include mq(md) {
-            gap: 7.5rem;
-        }
 
         @include mq(lg) {
             flex-flow: row;
@@ -92,7 +88,7 @@
         > * {
             display: flex;
             align-items: center;
-            gap: 1em;
+            gap: 0.5rem;
             margin-block-end: 1.5rem;
             cursor: pointer;
             font-weight: 500;

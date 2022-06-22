@@ -68,23 +68,33 @@ function Work() {
             </header>
 
 
-            <p className="work__desc lg-text">
+            <section className="work__desc">
+
+                <h2 className="work__subtitle f6">
+                    Summary
+                </h2>
+
+                <p className="lg-text">
+                    
+                    {desc && desc}
                 
-                {desc && desc}
-            
-            </p>
+                </p>
 
-            <section className="stack sm-text">
+            </section>
 
-                <h3 className="f7">
+            <section className="work__stack sm-text">
+
+                <h2 className="work__subtitle f6">
                     Stack
-                </h3>
+                </h2>
 
-                { stack && stack.map(s => (
-                    <span className="stack__item">
-                        {s}
-                    </span>
-                )) }
+                <ul className="ul">
+                    { stack && stack.map(s => (
+                        <li>
+                            {s}
+                        </li>
+                    )) }
+                </ul>
             
             </section>
 

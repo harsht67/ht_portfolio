@@ -42,7 +42,8 @@
         }
 
         .active {
-            background-color: #00000040;
+            @include theme('background-color', 'txt');
+            @include theme('color', 'bck');
         }
 
     }
@@ -52,8 +53,6 @@
         flex-flow: column;
         gap: 4rem 0rem;
         margin-block-end: 2.5rem;
-
-        img {border: 1px solid #fff}
 
         @include mq(lg) {
             flex-flow: row;

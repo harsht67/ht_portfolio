@@ -44,16 +44,21 @@
 
         .msg__vertical {
             position: absolute;
-            left: -5em;
-            bottom: 3.85em;
+            left: -4.5em;
+            bottom: 3.5em;
             transform: rotate(270deg);
             font-size: 2rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.025em;
         }
         
-        .msg__greeting, .msg__name {
+        .msg__greeting {
+            font-family: 'roboto mono';
+            font-weight: 600;
+        }
+
+        .msg__name {
             font-weight: 700;
         }
 
@@ -114,7 +119,7 @@
             }
         }
 
-        .button {
+        .btn {
             display: block;
             width: fit-content;
             margin: 2rem auto 0;

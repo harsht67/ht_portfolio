@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
+// components
+import Greeting from './Greeting'
+
 function Home() {
 
     const [works, setWorks] = useState([])
@@ -35,8 +38,9 @@ function Home() {
                     web developer
                 </div>
 
-                <p className="msg__greeting f1">
-                    नमस्ते!
+                <p className="msg__greeting f2">
+                    {/* नमस्ते! */}
+                    <Greeting/>
                 </p>
 
                 <p className="msg__name f1">
@@ -59,7 +63,7 @@ function Home() {
 
             <section className="home__works">
 
-                <h3 className="sm-text">
+                <h3 className="text">
                     <Link to="/work">
                         Previous work
                     </Link>
@@ -81,12 +85,11 @@ function Home() {
                 </ul>
 
                 <Link 
-                    to="/works"
-                    className="button text"
+                    to="/work"
+                    className="btn button text"
                 >
                     All work
                 </Link>
-
 
             </section>
 
