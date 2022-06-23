@@ -6,6 +6,7 @@ import { images } from '../../constants'
 import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import Button from '../../components/Button'
 
 function Contact() {
 
@@ -113,16 +114,16 @@ function Contact() {
 
                     </label>
 
-                    <button className="button text">
+                    <Button>
                         Send
-                    </button>
+                    </Button>
 
                 </form>
 
                 <aside className="contact__links lg-text">
 
                     <p>
-                        <img src={images.phone} alt="phone image" /> 9582594496
+                        <img src={images.phone} alt="phone image" /> (+91) 95825 94496
                     </p>
 
                     <p>

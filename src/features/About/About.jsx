@@ -2,6 +2,7 @@
 import './About.scss'
 
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 import { client, urlFor } from '../../client'
 
@@ -20,7 +21,7 @@ function About() {
         <div className="about">
 
             <h1 className="about__title title">
-                Know about me 
+                About
             </h1>
 
             <section className="about__desc">
@@ -48,10 +49,12 @@ function About() {
                 <div className="about__img">
 
                     { skills.map(skill => (
-                        <img 
+                        <motion.img 
                             key={skill.name}
                             src={urlFor(skill.imgurl)}
                             alt="skill image" 
+                            whileHover={{scale: [1, 1.25]}}
+                            transition={{duration: 0.15}}
                         />
                     )) }
 

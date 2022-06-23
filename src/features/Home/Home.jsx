@@ -7,9 +7,12 @@ import { client } from '../../client'
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { BsArrowUpRight } from 'react-icons/bs'
 
 // components
 import Greeting from './Greeting'
+import Button from '../../components/Button'
 
 function Home() {
 
@@ -55,13 +58,15 @@ function Home() {
 
                 </div>
 
-                <p className="msg__brief lg-text"> 
+                <p className="msg__brief text"> 
                     I love building beautiful interfaces, web apps, and everything in between!
                 </p>
 
             </section>
 
-            <section className="home__works">
+            <section
+                className="home__works"
+            >
 
                 <h3 className="text">
                     <Link to="/work">
@@ -77,18 +82,22 @@ function Home() {
                                 key={work.name}
                                 onClick={() => goToWork(work.name)}
                             >
-                                {work.name}
+                                <motion.div
+                                    whileHover={{ x: [0, 25], opacity: [1, 0.75] }}
+                                    transition={{ duration: 0.15 }}
+                                >
+                                    {work.name} 
+                                </motion.div>
                             </li>
                         ))
                     }
 
                 </ul>
 
-                <Link 
-                    to="/work"
-                    className="btn button text"
-                >
-                    All work
+                <Link to="/work">
+                    <Button className="btn">
+                        All work
+                    </Button>
                 </Link>
 
             </section>
@@ -103,11 +112,10 @@ function Home() {
                     harsh@gmail.com
                 </p>
 
-                <Link 
-                    to="/contact"
-                    className="contact__btn button text"
-                >
-                    Get in touch
+                <Link to="/contact">
+                    <Button>
+                        Get in touch
+                    </Button>
                 </Link>
 
 

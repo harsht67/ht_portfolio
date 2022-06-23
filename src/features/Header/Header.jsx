@@ -65,7 +65,7 @@ function Header(props) {
             
             </Link>
 
-            <nav className="header__nav lg-text">
+            <nav className="header__nav text">
             
                 <Navigation/>
             

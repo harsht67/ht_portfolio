@@ -5,6 +5,7 @@ import './Works.scss'
 import Box from './Box'
 
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 import { client, urlFor } from '../../client'
 
@@ -55,19 +56,21 @@ function Works() {
         <div className="works">
 
             <h1 className="works__title title">
-                Previous work
+                Previous Work
             </h1>
 
             <ul className="works__filters text">
 
                 { filters.map(filter => (
-                    <li 
+                    <motion.li 
                         key={filter}
                         className={currFilter==filter && 'active'}
                         onClick={() => changeFilter(filter)}
+                        whileHover={{scale: [1, 0.975]}}
+                        transition={{duration: 0.15}}
                     >
                         {filter}
-                    </li>
+                    </motion.li>
                 )) }
 
             </ul>

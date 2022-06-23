@@ -45,16 +45,16 @@
         .msg__vertical {
             position: absolute;
             left: -4.5em;
-            bottom: 3.5em;
+            bottom: 3.6em;
             transform: rotate(270deg);
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.025em;
+            // letter-spacing: 0.025em;
         }
         
         .msg__greeting {
-            font-family: 'roboto mono';
+            // font-family: 'roboto mono';
             font-weight: 600;
         }
 
@@ -144,10 +144,6 @@
         .contact__email {
             cursor: pointer;
             margin-block-end: 2rem;
-        }
-
-        .contact__btn {
-            display: inline-block;
         }
 
     }

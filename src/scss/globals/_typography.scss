@@ -15,8 +15,9 @@ input, textarea {
 }
 
 .title {
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    font-weight: 500;
+    font-size: clamp(2.75rem, 10vw, 4rem);
+    font-weight: 600;
+    // letter-spacing: 0.025em;
     margin-block-end: 2rem;
 }
 
@@ -57,16 +58,16 @@ input, textarea {
 } 
 
 .lg-text {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     letter-spacing: 0.015em;
-    line-height: 1.35em;
+    line-height: 1.5em;
 
     @include mq(md) {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
 
     @include mq(lg) {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
     }
 }
 

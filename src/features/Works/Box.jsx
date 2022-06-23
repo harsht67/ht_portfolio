@@ -30,34 +30,43 @@ function Box({data}) {
                     transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 >
 
-                    <Link 
-                        to={`/work/${name}`}
-                        className="hover__item" 
+                    
+
+                    <motion.div
+                        className="hover__item f5"
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{ duration: 0.15 }}
                     >
+                        <Link to={`/work/${name}`}>
+                            <AiFillEye/>
+                        </Link>
 
-                        <AiFillEye/>
+                    </motion.div>
 
-                    </Link>
 
-                    <a 
-                        className="hover__item"
+                    <motion.a 
+                        className="hover__item f5"
                         href={live} 
                         target="_blank" 
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{ duration: 0.15 }}
                     >
 
                         <AiOutlineLink/>
 
-                    </a>
+                    </motion.a>
 
-                    <a 
-                        className="hover__item"
+                    <motion.a 
+                        className="hover__item f5"
                         href={github}
                         target="_blank"
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{ duration: 0.15 }}
                     >
 
                         <AiFillGithub/>
 
-                    </a>
+                    </motion.a>
 
                 </motion.div>
 

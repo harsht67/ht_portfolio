@@ -3,12 +3,11 @@ import './Work.scss'
 
 import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
-
-import { client, urlFor } from '../../client'
-
-// icons
+import { motion } from 'framer-motion'
 import { AiFillGithub, AiOutlineLink } from 'react-icons/ai'
 import { IoChevronBackCircleSharp } from 'react-icons/io5'
+
+import { client, urlFor } from '../../client'
 
 function Work() {
 
@@ -45,28 +44,31 @@ function Work() {
                 
                 </h1>
 
-                <div className="work__links f7">
+                <div className="work__links f4">
 
-                    <a
+                    <motion.a
                         className="flex--center"
                         href={github}
                         target="_blank"
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{ duration: 0.15 }}
                     >
                         <AiFillGithub/>
-                    </a>
+                    </motion.a>
 
-                    <a
+                    <motion.a
                         className="flex--center"
                         href={live}
                         target="_blank"
+                        whileHover={{ scale: [1, 0.9] }}
+                        transition={{ duration: 0.15 }}
                     >
                         <AiOutlineLink/>
-                    </a>
+                    </motion.a>
 
                 </div>
 
             </header>
-
 
             <section className="work__desc">
 
@@ -82,13 +84,13 @@ function Work() {
 
             </section>
 
-            <section className="work__stack sm-text">
+            <section className="work__stack">
 
                 <h2 className="work__subtitle f6">
                     Stack
                 </h2>
 
-                <ul className="ul">
+                <ul className="ul sm-text">
                     { stack && stack.map(s => (
                         <li>
                             {s}

@@ -18,7 +18,7 @@
     }
 
     .works__title {
-        margin-block-end: 0.75em;
+        margin-block-end: 1em;
     }
 
     .works__filters {
@@ -32,18 +32,19 @@
         li {
             border-width: 1px;
             border-style: solid;
-            @include theme('border-color', 'txt');
+            @include theme("border-color", "border");
             border-radius: 2rem;
             padding: 1em 1.5em;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0.05em;
-            text-transform: uppercase;
+            text-transform: capitalize;
             cursor: pointer;
         }
 
         .active {
             @include theme('background-color', 'txt');
             @include theme('color', 'bck');
+            border: none;
         }
 
     }

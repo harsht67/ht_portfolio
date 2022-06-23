@@ -38,10 +38,12 @@
                 align-items: center;
                 justify-content: center;
 
-                > * {
-                    font-size: clamp(1.5rem, 5vw, 2rem);
-                    background-color: transparent;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
+
             }
 
         }
