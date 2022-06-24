@@ -5,7 +5,6 @@ import { useParams } from 'react-router'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { AiFillGithub, AiOutlineLink } from 'react-icons/ai'
-import { IoChevronBackCircleSharp } from 'react-icons/io5'
 
 import { client, urlFor } from '../../client'
 
@@ -24,7 +23,6 @@ function Work() {
                 data.forEach(d => {
                     if(d.name==name) {
                         setWork(d)
-                        console.log(d.stack)
                     }
                 })
             })
@@ -44,7 +42,7 @@ function Work() {
                 
                 </h1>
 
-                <div className="work__links f4">
+                <div className="work__links f5">
 
                     <motion.a
                         className="flex--center"

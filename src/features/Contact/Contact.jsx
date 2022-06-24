@@ -2,11 +2,13 @@
 import './Contact.scss'
 
 import { images } from '../../constants' 
+import { Button } from '../../components'
+import { Nav, InView } from '../../wrappers'
 
 import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import Button from '../../components/Button'
+import { motion } from 'framer-motion'
 
 function Contact() {
 
@@ -46,101 +48,124 @@ function Contact() {
     return (
         <div className="contact">
 
-            <h1 className="contact__title title">
-                Contact 
-            </h1>
+            <Nav>contact</Nav>
 
-            <div className="contact__content">
+            <InView>
 
-                <form 
-                    className="contact__form lg-text"
-                    onSubmit={handleSubmit}
-                >
+                <h1 className="contact__title title">
+                    Contact 
+                </h1>
 
-                    <label>
+                <div className="contact__content">
+
+                    <form 
+                        className="contact__form lg-text"
+                        onSubmit={handleSubmit}
+                    >
+
+                        <label>
+                            
+                            Name 
+                            
+                            <input
+                                name="name"
+                                value={name}
+                                onChange={changeHandler}
+                                onBlur={handleBlur}
+                                placeholder='harsh tomar'
+                            />
+
+                            {touched.name && errors.name 
+                                ? <div>{errors.name}</div>
+                                : null
+                            }
+
+                        </label>
+
+                        <label>
+                            
+                            Email
+                            
+                            <input
+                                name="email"
+                                value={email}
+                                onChange={changeHandler}
+                                onBlur={handleBlur}
+                                placeholder='harsh@gmail.com'
+                            />
+
+                            {touched.email && errors.email 
+                                ? <div>{errors.email}</div>
+                                : null
+                            }
+
+                        </label>
+
+                        <label>
+                            
+                            Message
+                            
+                            <textarea
+                                name="msg"
+                                value={msg}
+                                onChange={changeHandler}
+                                onBlur={handleBlur}
+                                placeholder='lorem ispum...'
+                            />
+
+                            {touched.msg && errors.msg
+                                ? <div>{errors.msg}</div>
+                                : null
+                            }
+
+                        </label>
+
+                        <Button>
+                            Send
+                        </Button>
+
+                    </form>
+
+                    <aside className="contact__links text">
+
+                        <div>
+                            
+                            <img src={images.phone} alt="phone image" /> 
+
+                            <span>(+91) 95825 94496</span>
+
+                        </div>
+
+                        <div>
+                            
+                            <img src={images.mail} alt="mail image" /> 
                         
-                        Name 
+                            <span>harshtomar@gmail.com</span>
+
+                        </div>
+
+                        <div>
+                            
+                            <img src={images.github} alt="github image" /> 
+
+                            <span>github.harshtomar.com</span>
+
+                        </div>
                         
-                        <input
-                            name="name"
-                            value={name}
-                            onChange={changeHandler}
-                            onBlur={handleBlur}
-                            placeholder='harsh tomar'
-                        />
-
-                        {touched.name && errors.name 
-                            ? <div>{errors.name}</div>
-                            : null
-                        }
-
-                    </label>
-
-                    <label>
+                        <div>
+                            
+                            <img src={images.linkedin} alt="linkedin image" /> 
                         
-                        Email
-                        
-                        <input
-                            name="email"
-                            value={email}
-                            onChange={changeHandler}
-                            onBlur={handleBlur}
-                            placeholder='harsh@gmail.com'
-                        />
+                            <span>linkedin.harshtomar.com</span>
 
-                        {touched.email && errors.email 
-                            ? <div>{errors.email}</div>
-                            : null
-                        }
+                        </div>
 
-                    </label>
+                    </aside>
 
-                    <label>
-                        
-                        Message
-                        
-                        <textarea
-                            name="msg"
-                            value={msg}
-                            onChange={changeHandler}
-                            onBlur={handleBlur}
-                            placeholder='lorem ispum...'
-                        />
+                </div>
 
-                        {touched.msg && errors.msg
-                            ? <div>{errors.msg}</div>
-                            : null
-                        }
+            </InView>
 
-                    </label>
-
-                    <Button>
-                        Send
-                    </Button>
-
-                </form>
-
-                <aside className="contact__links lg-text">
-
-                    <p>
-                        <img src={images.phone} alt="phone image" /> (+91) 95825 94496
-                    </p>
-
-                    <p>
-                        <img src={images.mail} alt="mail image" /> harshtomar@gmail.com
-                    </p>
-
-                    <p>
-                        <img src={images.github} alt="github image" /> github.harshtomar.com
-                    </p>
-                    
-                    <p>
-                        <img src={images.linkedin} alt="linkedin image" /> linkedin.harshtomar.com
-                    </p>
-
-                </aside>
-
-            </div>
 
         </div>
     )

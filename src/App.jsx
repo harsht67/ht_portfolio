@@ -3,11 +3,11 @@ import './App.scss'
 
 // components
 import { Header, Footer, Home, About, Works, Work, Contact } from './features'
+import { ScrollToTop } from './wrappers'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 import useLocalStorage from 'use-local-storage'
-import { useEffect } from 'react'
+import Nav from './wrappers/Nav/Nav'
 
 function App() {
 
@@ -29,20 +29,26 @@ function App() {
                     toggleTheme={toggleTheme} 
                 />
 
-                <Routes>
+                <Nav title="Home"></Nav>
 
-                    <Route path='/' element={<Home/>} />
+                <ScrollToTop>
 
-                    <Route path='/about' element={<About/>} />
+                    <Routes>
 
-                    <Route path='/work' element={<Works/>} />
+                        <Route path='/' element={<Home/>} />
 
-                    <Route path='/work/:name' element={<Work/>} />
+                        <Route path='/about' element={<About/>} />
 
-                    <Route path='/contact' element={<Contact/>} />
+                        <Route path='/work' element={<Works/>} />
 
-                </Routes>
-            
+                        <Route path='/work/:name' element={<Work/>} />
+
+                        <Route path='/contact' element={<Contact/>} />
+
+                    </Routes>
+
+                </ScrollToTop>
+
                <Footer/>
 
            </Router>

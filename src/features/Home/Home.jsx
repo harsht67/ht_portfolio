@@ -8,11 +8,11 @@ import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { BsArrowUpRight } from 'react-icons/bs'
 
 // components
 import Greeting from './Greeting'
-import Button from '../../components/Button'
+import { Button } from '../../components'
+import { InView, Nav} from '../../wrappers'
 
 function Home() {
 
@@ -34,92 +34,108 @@ function Home() {
 
     return (
         <div className="home">
+            
+            <Nav>home</Nav>
+            
+            <InView className="home__container">
 
-            <section className="msg">
-                
-                <div className="msg__vertical f3">
-                    web developer
-                </div>
+                <section className="msg">
+                    
+                    <div className="msg__vertical f3">
+                        web developer
+                    </div>
 
-                <p className="msg__greeting f2">
-                    {/* नमस्ते! */}
-                    <Greeting/>
-                </p>
+                    <p className="msg__greeting f2">
+                        {/* नमस्ते! */}
+                        <Greeting/>
+                    </p>
 
-                <p className="msg__name f1">
-                    I'm Harsh
-                </p>
+                    <p className="msg__name f1">
+                        I'm Harsh
+                    </p>
 
-                <div className="msg__socials">
+                    <div className="msg__socials">
 
-                    <img src={images.github} alt="github image" />
+                        <motion.img 
+                            src={images.github} 
+                            alt="github image" 
+                            whileHover={{ scale: [1, 1.1] }}
+                            transition={{ duration: 0.1 }}    
+                        />
 
-                    <img src={images.linkedin} alt="linkedin image" />
+                        <motion.img 
+                            src={images.linkedin} 
+                            alt="linkedin image" 
+                            whileHover={{ scale: [1, 1.1] }}
+                            transition={{ duration: 0.1 }}
+                        />
 
-                </div>
+                    </div>
 
-                <p className="msg__brief text"> 
-                    I love building beautiful interfaces, web apps, and everything in between!
-                </p>
+                    <p className="msg__brief text"> 
+                        I love building beautiful interfaces, web apps, and everything in between!
+                    </p>
 
-            </section>
+                </section>
 
-            <section
-                className="home__works"
-            >
+                <section
+                    className="home__works"
+                >
 
-                <h3 className="text">
-                    <Link to="/work">
-                        Previous work
-                    </Link>
-                </h3>
+                    <h3 className="text">
+                        <Link to="/work">
+                            Previous work
+                        </Link>
+                    </h3>
 
-                <ul className="f2">
+                    <ul className="f2">
 
-                    { works && 
-                        works.map(work => (
-                            <li 
-                                key={work.name}
-                                onClick={() => goToWork(work.name)}
-                            >
-                                <motion.div
-                                    whileHover={{ x: [0, 25], opacity: [1, 0.75] }}
-                                    transition={{ duration: 0.15 }}
+                        { works && 
+                            works.map(work => (
+                                <li 
+                                    key={work.name}
+                                    onClick={() => goToWork(work.name)}
                                 >
-                                    {work.name} 
-                                </motion.div>
-                            </li>
-                        ))
-                    }
+                                    <motion.div
+                                        whileHover={{ x: [0, 25], opacity: [1, 0.75] }}
+                                        transition={{ duration: 0.15 }}
+                                    >
+                                        {work.name} 
+                                    </motion.div>
+                                </li>
+                            ))
+                        }
 
-                </ul>
+                    </ul>
 
-                <Link to="/work">
-                    <Button className="btn">
-                        All work
-                    </Button>
-                </Link>
+                    <Link to="/work">
+                        <Button className="btn">
+                            All work
+                        </Button>
+                    </Link>
 
-            </section>
+                </section>
 
-            <section className="contact">
+                <section className="contact">
 
-                <h3 className="f1">
-                    Let's work together
-                </h3>
+                    <h3 className="f1">
+                        Let's work together
+                    </h3>
 
-                <p className="contact__email f6">
-                    harsh@gmail.com
-                </p>
+                    <p className="contact__email f6">
+                        harsh@gmail.com
+                    </p>
 
-                <Link to="/contact">
-                    <Button>
-                        Get in touch
-                    </Button>
-                </Link>
+                    <Link to="/contact">
+                        <Button>
+                            Get in touch
+                        </Button>
+                    </Link>
 
 
-            </section>
+                </section>
+
+            </InView>
 
         </div>
     )

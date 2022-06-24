@@ -6,7 +6,7 @@
     @include theme('color', 'txt');
     display: flex;
     flex-flow: column;
-    gap: 2rem;
+    gap: 2.5rem;
 
     @include mq(sm) {
         padding: 2.5rem 2rem;
@@ -67,7 +67,7 @@
         li {
             padding: 1em 1.5em;
             font-weight: 500;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             text-transform: capitalize;
             border-radius: 2rem;
             border-width: 1px;

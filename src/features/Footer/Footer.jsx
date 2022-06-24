@@ -1,13 +1,11 @@
 // styles
 import './Footer.scss'
 
-// icons
-import { BiCopyright } from 'react-icons/bi'
-
-// images
 import { images } from '../../constants'
 
+import { BiCopyright } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 function Footer() {
     return (
@@ -34,9 +32,19 @@ function Footer() {
 
             <section className="footer__socials">
 
-                <img src={images.github} alt="github img" />
+                <motion.img 
+                    src={images.github} 
+                    alt="github image" 
+                    whileHover={{ scale: [1, 1.1] }}
+                    transition={{ duration: 0.1 }}    
+                />
 
-                <img src={images.linkedin} alt="linkedin img" /> 
+                <motion.img 
+                    src={images.linkedin} 
+                    alt="linkedin image" 
+                    whileHover={{ scale: [1, 1.1] }}
+                    transition={{ duration: 0.1 }}
+                />
 
             </section>
 

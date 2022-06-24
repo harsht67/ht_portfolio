@@ -3,6 +3,7 @@ import './Works.scss'
 
 // components
 import Box from './Box'
+import { InView, Nav } from '../../wrappers'
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
@@ -55,31 +56,37 @@ function Works() {
     return (
         <div className="works">
 
-            <h1 className="works__title title">
-                Previous Work
-            </h1>
+            <Nav>work</Nav>
 
-            <ul className="works__filters text">
+            <InView>
 
-                { filters.map(filter => (
-                    <motion.li 
-                        key={filter}
-                        className={currFilter==filter && 'active'}
-                        onClick={() => changeFilter(filter)}
-                        whileHover={{scale: [1, 0.975]}}
-                        transition={{duration: 0.15}}
-                    >
-                        {filter}
-                    </motion.li>
-                )) }
+                <h1 className="works__title title">
+                    Previous Work
+                </h1>
 
-            </ul>
+                <ul className="works__filters text">
 
-            <section className="works__content">
+                    { filters.map(filter => (
+                        <motion.li 
+                            key={filter}
+                            className={currFilter==filter && 'active'}
+                            onClick={() => changeFilter(filter)}
+                            whileHover={{scale: [1, 0.975]}}
+                            transition={{duration: 0.15}}
+                        >
+                            {filter}
+                        </motion.li>
+                    )) }
 
-                { filterWorks.map(work => <Box data={work} /> )}
+                </ul>
 
-            </section>
+                <section className="works__content">
+
+                    { filterWorks.map(work => <Box data={work} /> )}
+
+                </section>
+
+            </InView>
 
         </div>
     )

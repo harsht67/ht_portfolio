@@ -60,7 +60,7 @@ input, textarea {
 .lg-text {
     font-size: 1.05rem;
     letter-spacing: 0.015em;
-    line-height: 1.5em;
+    line-height: 1.6em;
 
     @include mq(md) {
         font-size: 1.15rem;
@@ -74,7 +74,7 @@ input, textarea {
 .text {
     font-size: 0.9rem;
     letter-spacing: 0.015em;
-    line-height: 1.35em;
+    line-height: 1.6em;
 
     @include mq(md) {
         font-size: 1;
@@ -88,7 +88,7 @@ input, textarea {
 .sm-text {
     font-size: 0.75rem;
     letter-spacing: 0.015em;
-    line-height: 1.35;
+    line-height: 1.6;
 
     @include mq(md) {
         font-size: 0.85rem;

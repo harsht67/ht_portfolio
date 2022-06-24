@@ -3,81 +3,109 @@ import './About.scss'
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import ReactTooltip from 'react-tooltip'
 
 import { client, urlFor } from '../../client'
+
+// components
+import Nav from '../../wrappers/Nav/Nav'
+import InView from '../../wrappers/InView'
 
 function About() {
 
     const [skills, setSkills] = useState([])
+
 
     useEffect(() => {
         const query = '*[_type == "skills"]'
 
         client.fetch(query)
             .then(data => setSkills(data))
+
     }, [])
+
+    useEffect(() => {
+        ReactTooltip.rebuild()        
+    })
 
     return (
         <div className="about">
 
-            <h1 className="about__title title">
-                About
-            </h1>
+            <Nav>about</Nav>
 
-            <section className="about__desc">
+            <InView>
 
-                <h3 className="about__subtitle f6">
-                    Summary
-                </h3>
+                <h1 className="about__title title">
+                    About
+                </h1>
 
-                <p className="lg-text">
-                    As a web developer, I enjoy bridging the gap between engineering and 
-                    design — combining my technical knowledge with my keen eye for design 
-                    to create a beautiful product. My goal is to always build applications 
-                    that are scalable and efficient under the hood while providing engaging, 
-                    pixel-perfect user experiences.
-                </p>
+                <section className="about__desc">
 
-            </section>
+                    <h3 className="about__subtitle f6">
+                        Summary
+                    </h3>
 
-            <section className="about__skills">
+                    <p className="lg-text">
+                        As a web developer, I enjoy bridging the gap between engineering and 
+                        design — combining my technical knowledge with my keen eye for design 
+                        to create a beautiful product. My goal is to always build applications 
+                        that are scalable and efficient under the hood while providing engaging, 
+                        pixel-perfect user experiences.
+                    </p>
 
-                <h3 className="about__subtitle f6">
-                    Skills
-                </h3>
+                </section>
 
-                <div className="about__img">
+                <section className="about__skills">
 
-                    { skills.map(skill => (
-                        <motion.img 
-                            key={skill.name}
-                            src={urlFor(skill.imgurl)}
-                            alt="skill image" 
-                            whileHover={{scale: [1, 1.25]}}
-                            transition={{duration: 0.15}}
+                    <h3 className="about__subtitle f6">
+                        Skills
+                    </h3>
+
+                    <div className="about__img">
+
+                        { skills.map(skill => (
+                            <div
+                                data-for="tt"
+                                data-tip={skill.name}
+                            >
+                                <motion.img 
+                                    key={skill.name}
+                                    src={urlFor(skill.imgurl)}
+                                    alt="skill image" 
+                                    whileHover={{scale: [1, 1.25]}}
+                                    transition={{duration: 0.15}}
+                                />
+                            </div>
+                        )) }
+                
+                        <ReactTooltip
+                            id="tt"
+                            type="info"
+                            effect="solid"
                         />
-                    )) }
 
-                </div>
+                    </div>
 
-            </section>
+                </section>
 
-            <section className="about__education">
+                <section className="about__education">
 
-                <h3 className="about__subtitle f6">
-                    Education
-                </h3>
+                    <h3 className="about__subtitle f6">
+                        Education
+                    </h3>
 
-                <p className="lg-text">
-                    Graduated from <b>Keshav Mahavidhlaya Delhi University</b> after completing 
-                    Bachelor of Science in Computer Science
+                    <p className="lg-text">
+                        Graduated from <b>Keshav Mahavidhlaya Delhi University</b> after completing 
+                        Bachelor of Science in Computer Science
+                    </p>
+
+                </section>
+
+                <p className="about__cv lg-text">
+                    Looking for my <a>CV</a>?
                 </p>
 
-            </section>
-
-            <p className="about__cv lg-text">
-                Looking for my <a>CV</a>?
-            </p>
+            </InView>
 
         </div>
     )

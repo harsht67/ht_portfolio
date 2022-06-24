@@ -1,29 +1,34 @@
-import { Link } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
+
+const nav = ["home", "about", "work", "contact"]
 
 function Navigation(props) {
+
+    let location = useLocation().pathname.split('/')[1]
+
     return (
         <ul {...props} >
             
-            <li>
+            <li className={location=="" && 'curr-nav'}>
                 <Link to='/'>
                     home
                 </Link>
             </li>
     
-            <li>
-                <Link to='about'>
+            <li className={location=="about" && 'curr-nav'}>
+                <Link to='/about'>
                     about
                 </Link>
             </li>
     
-            <li>
+            <li className={location=="work" && 'curr-nav'}>
                 <Link to='/work'>
                     work
                 </Link>
             </li>
     
-            <li>
-                <Link to='contact'>
+            <li className={location=="contact" && 'curr-nav'}>
+                <Link to='/contact'>
                     contact
                 </Link>
             </li>

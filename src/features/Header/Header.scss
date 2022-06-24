@@ -102,16 +102,34 @@
 
             ul {
                 @extend %ul;
-                width: fit-content;
                 margin-block-end: 2.5rem;
                 flex-flow: column;
 
                 li {
-                    font-size: 2.75rem;
+                    font-size: 2.5rem;
                     font-weight: 600;
                     margin-block-end: 2rem;
                     text-transform: capitalize;
                 }
+
+                .curr-nav {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 0;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        @include theme("background-color", "txt")
+                    }
+
+                }
+
             }
 
             .content__socials {
@@ -173,9 +191,33 @@
             li {
                 letter-spacing: 0.05em;
                 text-transform: capitalize;
-                font-weight: 500;
+                font-weight: 600;
                 margin-inline-end: 2rem;
+
+                & {
+                    position: relative;
+                }
+                
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    content: '';
+                    display: block;
+                    @include theme("background-color", "txt");
+                    transition: width 0.15s linear;
+                }
+    
+                &:hover {
+                    &::after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+
             }
+
         }
 
         @include mq(lg) {

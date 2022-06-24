@@ -5,8 +5,10 @@
     @include theme('background', 'bck');
     @include theme('color', 'txt');
 
-    > * {
-        margin-block-end: 5rem;
+    .home__container {
+        > * {
+            margin-block-end: 5rem;
+        }
     }
 
     @include mq(sm) {
@@ -16,16 +18,20 @@
     @include mq(md) {
         padding-inline: 4rem;
 
-        > * {
-            margin-block-end: 7.5rem;
+        .home__container {
+            > * {
+                margin-block-end: 7.5rem;
+            }
         }
     }
 
     @include mq(lg) {
         padding: 2rem 8rem;
 
-        > * {
-            margin-block-end: 10rem;
+        .home__container {
+            > * {
+                margin-block-end: 10rem;
+            }
         }
     }
 
@@ -48,6 +54,7 @@
             bottom: 3.6em;
             transform: rotate(270deg);
             font-size: 1.9rem;
+            font-size: clamp(1.8rem, 4vw, 1.95rem);
             font-weight: 700;
             text-transform: uppercase;
             // letter-spacing: 0.025em;

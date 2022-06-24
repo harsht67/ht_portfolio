@@ -91,10 +91,31 @@
             gap: 0.5rem;
             margin-block-end: 1.5rem;
             cursor: pointer;
-            font-weight: 500;
             
             img {
                 width: clamp(1.25rem, 5vw, 1.75rem);
+            }
+
+            span {
+                position: relative;
+            }
+
+            span::after {
+                position: absolute;
+                right: 0;
+                width: 0;
+                height: 2px;
+                content: '';
+                display: block;
+                @include theme("background-color", "txt");
+                transition: width 0.25s linear;
+            }
+
+            &:hover {
+                span::after {
+                    left: 0;
+                    width: 100%;
+                }
             }
         
         }
