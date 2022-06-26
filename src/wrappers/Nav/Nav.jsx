@@ -9,7 +9,7 @@ function Nav(props) {
     const [classes, setClasses] = useState('')
 
     useEffect(() => {
-        setClasses("nav--add")
+        setClasses("nav--add nav--delay")
         func()
     }, [])
 

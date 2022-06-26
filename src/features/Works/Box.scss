@@ -50,12 +50,42 @@
 
     }
 
+    .box__text {
+        margin-block: 2rem;
+        display: flex;
+        flex-flow: column;
+        gap: 0.5rem;
+    }
+
     .box__name {
-        padding: 2rem 0;
         text-transform: capitalize;
-        // font-weight: 500;
+        font-weight: 500;
         // letter-spacing: 0.05em;
         margin-block-start: 0.25rem;
+    }
+
+    .box__stack {
+        margin-block-start: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        @include mq(lg) {
+            // gap: 1rem;
+        }
+
+        li {
+            padding: 0.5em 0.75em;
+            letter-spacing: 0.015em;
+            text-transform: capitalize;
+            border-radius: 2rem;
+            // border-width: 1px;
+            // border-style: solid;
+            // @include theme("border-color", "border");
+            @include theme("color", "txt");
+            @include theme("background-color", "bck-op");
+        }
+    
     }
 
 }

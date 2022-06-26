@@ -7,11 +7,10 @@ import { AiFillGithub, AiFillEye, AiOutlineLink } from 'react-icons/ai'
 import { urlFor } from '../../client'
 
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 
 function Box({data}) {
 
-    const { name, imgurl, github, live } = data
+    const { name, desc, stack, imgurl, github, live } = data
 
     return (
         <div className="box">
@@ -30,9 +29,7 @@ function Box({data}) {
                     transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 >
 
-                    
-
-                    <motion.div
+                    {/* <motion.div
                         className="hover__item f5"
                         whileHover={{ scale: [1, 0.9] }}
                         transition={{ duration: 0.15 }}
@@ -41,7 +38,7 @@ function Box({data}) {
                             <AiFillEye/>
                         </Link>
 
-                    </motion.div>
+                    </motion.div> */}
 
 
                     <motion.a 
@@ -72,11 +69,25 @@ function Box({data}) {
 
             </div>
             
-            <p className="box__name f4">
+            <section className="box__text">
 
-                {name}
-            
-            </p>
+                <h2 className="box__name f6">
+                    {name}
+                </h2>
+
+                <p className="box__desc text">
+                    {desc}
+                </p>
+
+                <ul className="box__stack ul sm-text">
+                    { stack && stack.map(s => (
+                        <li>
+                            {s}
+                        </li>
+                    )) }
+                </ul>
+
+            </section>
    
         </div>
     )
