@@ -7,7 +7,8 @@
     right: 0;
     bottom: 0;
     height: 0;
-    background-color: #000;
+    //background-color: #000;
+    @include theme("background-color", "acc");
     color: #fff;
     transition: height 0.4s cubic-bezier(.5, 0, .5, 1);
     display: flex;

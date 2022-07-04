@@ -4,11 +4,13 @@ import './Contact.scss'
 import { images } from '../../constants' 
 import { Button } from '../../components'
 import { Nav, InView } from '../../wrappers'
+import Modal from './Modal'
 
 import { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { motion } from 'framer-motion'
+import { client } from '../../client'
 
 function Contact() {
 
@@ -17,6 +19,50 @@ function Contact() {
         email: '',
         msg: '',
     })
+
+    const [modal, setModal] = useState({
+        display: false, 
+        text: "",
+    })
+
+    const submitHandler = () => {
+
+        const contact = {
+            _type: "contact",
+            name: name,
+            email: email,
+            msg: msg,
+        }
+
+        client
+            .create(contact)
+            .then(() => {
+                setModal({
+                    display: true,
+                    text: "Message sent!",
+                })
+            })
+            .err(() => {
+                setModal({
+                    display: true,
+                    text: "Sorry there was an error!",
+                })
+            })
+
+    }
+
+    const hideModal = () => {
+        setModal({
+            display: false,
+            text: "",
+        })
+
+        setFormData({
+            name: '',
+            email: '',
+            msg: '',
+        })
+    }
 
     // validation schema for form data
     const schema = Yup.object().shape({
@@ -28,7 +74,7 @@ function Contact() {
     const { handleSubmit, handleChange, handleBlur, touched, values, errors } = useFormik({
         initialValues: formData, 
         validationSchema: schema,
-        onSubmit: (values) => {console.log(JSON.stringify(values))}
+        onSubmit: submitHandler
     })
 
     // handles updates to form data 
@@ -59,7 +105,7 @@ function Contact() {
                 <div className="contact__content">
 
                     <form 
-                        className="contact__form lg-text"
+                        className="form lg-text"
                         onSubmit={handleSubmit}
                     >
 
@@ -76,7 +122,7 @@ function Contact() {
                             />
 
                             {touched.name && errors.name 
-                                ? <div>{errors.name}</div>
+                                ? <div className="form__err">{errors.name}</div>
                                 : null
                             }
 
@@ -95,7 +141,7 @@ function Contact() {
                             />
 
                             {touched.email && errors.email 
-                                ? <div>{errors.email}</div>
+                                ? <div className="form__err">{errors.email}</div>
                                 : null
                             }
 
@@ -114,25 +160,29 @@ function Contact() {
                             />
 
                             {touched.msg && errors.msg
-                                ? <div>{errors.msg}</div>
+                                ? <div className="form__err">{errors.msg}</div>
                                 : null
                             }
 
                         </label>
 
-                        <Button>
+                        <Button className="form__btn">
                             Send
                         </Button>
 
                     </form>
 
-                    <aside className="contact__links text">
+                    <hr/>
+
+                    <aside className="contact__links lg-text">
 
                         <div>
                             
                             <img src={images.phone} alt="phone image" /> 
 
-                            <span>(+91) 95825 94496</span>
+                            <a href="tel: +91 9582594496">
+                                (+91) 95825 94496
+                            </a>
 
                         </div>
 
@@ -166,6 +216,12 @@ function Contact() {
 
             </InView>
 
+            {modal.display &&
+                <Modal 
+                    data={modal.text} 
+                    hideModal={hideModal}
+                />
+            }
 
         </div>
     )

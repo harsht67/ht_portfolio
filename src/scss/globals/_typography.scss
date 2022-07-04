@@ -1,4 +1,5 @@
 @use '../utils' as *;
+@use '../globals/mixins' as *;
 
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
@@ -27,6 +28,11 @@ input, textarea {
     font-weight: 900;
     letter-spacing: 0.1em;
     cursor: pointer;
+    @include theme("color", "acc");
+}
+
+.acc-text {
+    @include theme("color", "acc");
 }
 
 .f1 {

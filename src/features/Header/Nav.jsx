@@ -9,25 +9,25 @@ function Navigation(props) {
     return (
         <ul {...props} >
             
-            <li className={location=="" && 'curr-nav'}>
+            <li className={location=="" && 'curr--nav'}>
                 <Link to='/'>
                     home
                 </Link>
             </li>
     
-            <li className={location=="about" && 'curr-nav'}>
+            <li className={location=="about" && 'curr--nav'}>
                 <Link to='/about'>
                     about
                 </Link>
             </li>
     
-            <li className={location=="work" && 'curr-nav'}>
+            <li className={location=="work" && 'curr--nav'}>
                 <Link to='/work'>
                     work
                 </Link>
             </li>
     
-            <li className={location=="contact" && 'curr-nav'}>
+            <li className={location=="contact" && 'curr--nav'}>
                 <Link to='/contact'>
                     contact
                 </Link>

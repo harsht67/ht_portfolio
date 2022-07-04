@@ -51,7 +51,7 @@ function Home() {
                     </p>
 
                     <p className="msg__name f1">
-                        I'm Harsh
+                        I'm <span className="acc-text">Harsh</span>
                     </p>
 
                     <div className="msg__socials">
@@ -82,7 +82,7 @@ function Home() {
                     className="home__works"
                 >
 
-                    <h3 className="text">
+                    <h3 className="sm-text">
                         <Link to="/work">
                             Previous work
                         </Link>
@@ -97,7 +97,7 @@ function Home() {
                                     onClick={() => goToWork(work.name)}
                                 >
                                     <motion.div
-                                        whileHover={{ x: [0, 25], opacity: [1, 0.75] }}
+                                        whileHover={{ x: [0, 25] }}
                                         transition={{ duration: 0.15 }}
                                     >
                                         {work.name} 
@@ -122,9 +122,12 @@ function Home() {
                         Let's work together
                     </h3>
 
-                    <p className="contact__email f6">
+                    <a 
+                        className="contact__email f6 acc-text"
+                        href="mailto:harsh@gmail.com"
+                    >
                         harsh@gmail.com
-                    </p>
+                    </a>
 
                     <Link to="/contact">
                         <Button>

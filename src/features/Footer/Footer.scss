@@ -6,7 +6,7 @@
     @include theme('color', 'txt');
     border-width: 1px 0 0 0;
     border-style: solid;
-    @include theme('border-color', 'txt');
+    @include theme('border-color', 'border2');
     display: flex;
     justify-content: space-between;
 

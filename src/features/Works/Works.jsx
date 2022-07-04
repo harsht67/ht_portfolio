@@ -86,6 +86,15 @@ function Works() {
 
                 </section>
 
+                <a 
+                    className="works__link lg-text"
+                    href="https://github.com/harsht67"
+                    target="_blank"
+                >
+                    Check my <b className="acc-text">Github</b> for more! 
+                </a>
+
+
             </InView>
 
         </div>

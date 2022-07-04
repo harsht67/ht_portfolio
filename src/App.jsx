@@ -41,7 +41,7 @@ function App() {
 
                         <Route path='/work' element={<Works/>} />
 
-                        {/* <Route path='/work/:name' element={<Work/>} /> */}
+                        <Route path='/work/:name' element={<Work/>} />
 
                         <Route path='/contact' element={<Contact/>} />
 

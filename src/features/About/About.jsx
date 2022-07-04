@@ -80,7 +80,7 @@ function About() {
                 
                         <ReactTooltip
                             id="tt"
-                            type="info"
+                            type="error"
                             effect="solid"
                         />
 
@@ -95,14 +95,14 @@ function About() {
                     </h3>
 
                     <p className="lg-text">
-                        Graduated from <b>Keshav Mahavidhlaya Delhi University</b> after completing 
+                        Graduated from <b className="acc-text">Keshav Mahavidhlaya Delhi University</b> after completing 
                         Bachelor of Science in Computer Science
                     </p>
 
                 </section>
 
                 <p className="about__cv lg-text">
-                    Looking for my <a>CV</a>?
+                    Looking for my <a className="acc-text">CV</a>?
                 </p>
 
             </InView>

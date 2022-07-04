@@ -11,4 +11,11 @@
     @include theme("border-color", "border");
     background: none;
     @include theme("color", "txt");
+    transition: all 0.25s;
+    transition-property: border-color, background-color;
+
+    &:hover {
+        @include theme("border-color", "acc");
+        @include theme("background-color", "acc");
+    }
 }

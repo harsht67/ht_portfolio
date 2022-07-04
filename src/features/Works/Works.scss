@@ -42,8 +42,7 @@
         }
 
         .active {
-            @include theme('background-color', 'txt');
-            @include theme('color', 'bck');
+            @include theme('background-color', 'acc');
             border: none;
         }
 
@@ -67,4 +66,10 @@
         }
 
     }
+
+    .works__link {
+        font-weight: 500;
+        @extend %hoverBorderAnimation;
+    }
+
 }

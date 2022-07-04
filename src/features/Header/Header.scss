@@ -4,9 +4,6 @@
     padding: 1rem;
     @include theme('background', 'bck');
     @include theme('color', 'txt');
-    border-width: 0 0 1px 0;
-    border-style: solid;
-    @include theme('border-color', 'color');
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,6 +24,9 @@
         padding: 1rem 8rem;
         justify-content: space-between;
         gap: 0;
+        border-width: 0 0 1px 0;
+        border-style: solid;
+        @include theme('border-color', 'border2');
     }
 
     %ul {
@@ -112,7 +112,7 @@
                     text-transform: capitalize;
                 }
 
-                .curr-nav {
+                .curr--nav {
                     position: relative;
 
                     &::before {
@@ -125,7 +125,8 @@
                         width: 10px;
                         height: 10px;
                         border-radius: 50%;
-                        @include theme("background-color", "txt")
+                        @include theme("background-color", "acc");
+
                     }
 
                 }
@@ -156,6 +157,10 @@
 
         .menu__btn {
             transform: rotate(45deg);
+
+            &, &::before, &::after {
+                @include theme("background-color", "acc");
+            }
 
             &::before {
                 opacity: 0;
@@ -189,33 +194,22 @@
             @extend %ul;
 
             li {
-                letter-spacing: 0.05em;
+                letter-spacing: 0.015em;
                 text-transform: capitalize;
                 font-weight: 600;
                 margin-inline-end: 2rem;
-
-                & {
-                    position: relative;
-                }
                 
+                @extend %hoverBorderAnimation;
                 &::after {
-                    position: absolute;
-                    right: 0;
-                    width: 0;
-                    height: 2px;
-                    content: '';
-                    display: block;
-                    @include theme("background-color", "txt");
-                    transition: width 0.15s linear;
-                }
-    
-                &:hover {
-                    &::after {
-                        left: 0;
-                        width: 100%;
-                    }
+                    transition-duration: 0.15s;
                 }
 
+            }
+
+            .curr--nav {
+                border-style: solid;
+                border-width: 0 0 2px;
+                @include theme("border-color", "acc");
             }
 
         }

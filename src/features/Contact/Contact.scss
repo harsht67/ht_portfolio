@@ -24,7 +24,7 @@
     .contact__content {
         display: flex;
         flex-flow: column;
-        gap: 7.5rem;
+        gap: 5rem;
         margin-block-end: 5rem;
 
         @include mq(lg) {
@@ -34,7 +34,7 @@
         }
     }
 
-    .contact__form {
+    .form {
 
         @include mq(md) {
             width: 60%;
@@ -46,8 +46,15 @@
 
         label {
             display: block;
-            border-block-end: 1px solid #bebebe;
+            border-style: solid;
+            border-width: 0 0 1px;
+            @include theme("border-color", "border");
             margin-block-end: 2rem;
+            transition: border 0.25s;
+
+            &:focus-within {
+                border-color: #bc2a35;
+            }
 
             input, textarea {
                 border: none;
@@ -60,11 +67,17 @@
 
             textarea {
                 height: 8rem;
+                resize: none;
             }
             
         }
 
-        button {
+        .form__err {
+            color: #f00;
+            font-size: 0.65em;
+        }
+
+        .form__btn {
             display: block;
             margin: auto;
 
@@ -76,9 +89,22 @@
 
     }
 
+    hr {
+        width: 100%;
+        border-width: 1px 0 0;
+        @include theme("border-color", "border");
+
+        @include mq(lg) {
+            display: none;
+        }
+    }
+
     .contact__links {
         width: fit-content;
         margin: auto;
+        // border-width: 1px 0 0;
+        // border-style: solid;
+        // @include theme("border-color", "border");
         
         @include mq(lg) {
             width: 30%;
@@ -90,32 +116,13 @@
             align-items: center;
             gap: 0.5rem;
             margin-block-end: 1.5rem;
-            cursor: pointer;
             
             img {
                 width: clamp(1.25rem, 5vw, 1.75rem);
             }
 
-            span {
-                position: relative;
-            }
-
-            span::after {
-                position: absolute;
-                right: 0;
-                width: 0;
-                height: 2px;
-                content: '';
-                display: block;
-                @include theme("background-color", "txt");
-                transition: width 0.25s linear;
-            }
-
-            &:hover {
-                span::after {
-                    left: 0;
-                    width: 100%;
-                }
+            a, span {
+                @extend %hoverBorderAnimation;
             }
         
         }

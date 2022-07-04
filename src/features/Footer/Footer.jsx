@@ -18,7 +18,7 @@ function Footer() {
                     className="footer__logo logo"
                 >
 
-                    &lt;HT/&gt;
+                    &lt;<span>HT</span>/&gt;
                 
                 </Link>
 

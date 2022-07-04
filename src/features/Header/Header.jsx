@@ -27,7 +27,7 @@ function Header(props) {
     return (
         <header className="header">
 
-            <div className={`menu f5 ${menuDisplay?'menu-open':'menu-close'} `}>
+            <div className={`menu f5 ${menuDisplay ? 'menu-open' : 'menu-close'} `}>
 
                 <div 
                     className="menu__btnContainer" 
@@ -61,7 +61,7 @@ function Header(props) {
                 className="header__logo logo"
             >
 
-                &lt;HT/&gt;
+                &lt;<span>HT</span>/&gt;
             
             </Link>
 

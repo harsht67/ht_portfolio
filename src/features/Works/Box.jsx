@@ -1,12 +1,11 @@
 // styles
 import './Box.scss'
 
-// icons
 import { AiFillGithub, AiFillEye, AiOutlineLink } from 'react-icons/ai'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 import { urlFor } from '../../client'
-
-import { motion } from 'framer-motion'
 
 function Box({data}) {
 
@@ -29,7 +28,7 @@ function Box({data}) {
                     transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 >
 
-                    {/* <motion.div
+                    <motion.div
                         className="hover__item f5"
                         whileHover={{ scale: [1, 0.9] }}
                         transition={{ duration: 0.15 }}
@@ -38,7 +37,7 @@ function Box({data}) {
                             <AiFillEye/>
                         </Link>
 
-                    </motion.div> */}
+                    </motion.div>
 
 
                     <motion.a 
@@ -71,7 +70,7 @@ function Box({data}) {
             
             <section className="box__text">
 
-                <h2 className="box__name f6">
+                <h2 className="box__name f4">
                     {name}
                 </h2>
 
